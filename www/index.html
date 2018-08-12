@@ -1,0 +1,1780 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Internetprint próba app</title>
+
+  <link rel="stylesheet" href="../www/css/style.css">
+   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+
+
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script> 
+
+<!--script ezzel működik a galéria és az oldalváltás is-->
+  <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+
+  <script src="../www/js/index.js"></script>
+
+  <script type="text/javascript">
+       ons.getScriptPage().addEventListener('prechange', function(event) {
+        if (event.target.matches('#appTabbar')) {
+          event.currentTarget.querySelector('ons-toolbar .center').innerHTML = event.tabItem.getAttribute('label');
+        }
+      });
+/**/
+
+ $('.OpenImgUpload').click(function(){ $('.imgupload').trigger('click'); });
+
+ /**/
+
+ 
+  </script>
+</head>
+
+<body>
+<!--menü-->
+  <ons-navigator id="appNavigator" swipeable swipe-target-width="80px">
+  <ons-page>
+    <ons-splitter id="appSplitter">
+      <ons-splitter-side id="sidemenu" page="sidemenu.html" swipeable side="right" collapse="" width="260px"></ons-splitter-side>
+      <ons-splitter-content page="tabbar.html"></ons-splitter-content>
+    </ons-splitter>
+  </ons-page>
+</ons-navigator>
+
+<template id="tabbar.html">
+  <ons-page id="tabbar-page">
+    <ons-toolbar>
+      <div class="left" style="width: 40%;"></div>
+      <div class="center">
+        <img src="../www/img/logot.png" style="width: 90%; height: 90%; margin-left: auto; margin-right: auto;">
+      </div>
+      <div class="right">
+        <ons-toolbar-button onclick="fn.toggleMenu()">
+          <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+    </ons-toolbar>
+    <ons-tabbar swipeable id="appTabbar" position="auto">
+      <ons-tab label="Főoldal" icon="ion-home" page="home.html" active></ons-tab>
+      <ons-tab label="Kapcsolat" icon="ion-edit" page="forms.html"></ons-tab>
+      <ons-tab label="Információk" icon="fa-question-circle" page="animations.html"></ons-tab>
+    </ons-tabbar>
+
+    
+  </ons-page>
+</template>
+    
+
+<!--jobb oldali menü-->
+  <template id="sidemenu.html">
+    <ons-page>
+      <div class="profile-pic">
+      <img src="../www/img/logot.png">
+      </div>
+
+      <ons-list-title>Menü</ons-list-title>
+      <ons-list>
+        
+        <ons-list-item onclick="fn.loadView(0)">
+          <div class="left">
+            <ons-icon fixed-width class="list-item__icon" icon="ion-home, material:md-home"></ons-icon>
+          </div>
+          <div class="center">
+            Főoldal
+          </div>
+          <div class="right">
+            <ons-icon icon="fa-link"></ons-icon>
+          </div>
+        </ons-list-item>
+       
+        <ons-list-item onclick="fn.loadView(1)">
+          <div class="left">
+            <ons-icon fixed-width class="list-item__icon" icon="ion-edit, material:md-edit"></ons-icon>
+          </div>
+          <div class="center">
+            Kapcsolat
+          </div>
+          <div class="right">
+            <ons-icon icon="fa-link"></ons-icon>
+          </div>
+        </ons-list-item>
+        
+        <ons-list-item onclick="fn.loadView(2)">
+          <div class="left">
+            <ons-icon fixed-width class="list-item__icon" icon="fa-question-circle-o, material: md-movie-alt"></ons-icon>
+          </div>
+          <div class="center">
+            Fizetési és szállítási információk
+          </div>
+          <div class="right">
+            <ons-icon icon="fa-link"></ons-icon>
+          </div>
+        </ons-list-item>
+      </ons-list>
+
+
+    </ons-page>
+  </template>
+  <!--jobb oldali menü vége-->
+
+<!--főoldal témák-->
+  <template id="home.html">
+    <ons-page>
+    <!-- <div class="profile-pic"> -->
+      <!-- <img src="../www/img/logot.png"> --
+>    <!-- </div> -->
+
+    <!--kisfotókönyv-->
+    <ons-card onclick="fn.pushPage({'id': 'kispb.html', 'title': 'Kis Fotókönyv'})" class="kisfotokonyv" style="height: 48%
+    ; text-align: center;">
+      
+        <!-- <div class="title">Kis fótókönyv</div> -->
+        <!-- <div class="content">Normál méret (20*20cm)</div> -->
+        <div class="polaroid">
+         <img src="../www/img/photo.jpg" alt="nagyfotokonyv" style="width: 95%";>
+         <p>Kis fotókönyv (20*20cm)</p>
+       </div>
+      
+    
+    </ons-card>
+
+    <!--közepes fotókönyv-->
+    <!-- <ons-card onclick="fn.pushPage({'id': 'kozepespb.html', 'title': 'Kozepes Fotókönyv'})" class="kozepesfotokonyv" style="height: 40% -->
+    <!-- ; text-align: center;"> -->
+      <ons-card onclick="fn.pushPage({'id': 'kispbtwo.html', 'title': 'Kis Fotókönyv'})" class="kisfotokonyv" style="height: 48%
+    ; text-align: center;">
+      
+
+      <!-- <div class="title">Közepes fótókönyv</div> -->
+      <!-- <div class="content">Normál méret (20*29cm)</div> -->
+       <div class="polaroid">
+         <img src="../www/img/photo.jpg" alt="nagyfotokonyv" style="width: 95%">
+         <p>Közepes fotókönyv (20*29cm)</p>
+       </div>
+      
+    </ons-card> 
+
+    
+    
+    <!--nagy fotókönyv-->
+      <ons-card onclick="fn.pushPage({'id': 'nagypb.html', 'title': 'Nagy Fotókönyv'})" class="nagyfotokonyv" style="height: 40%
+      ; text-align: center;">
+
+      <div class="title">Nagy fótókönyv</div>
+      <div class="content">Nagy méret (29*29cm)</div>
+       <div>
+         <img src="../www/img/bpb.png" alt="nagyfotokonyv" style="width: 95%">
+       </div>
+      
+      </ons-card>
+
+    </ons-page>
+  </template>
+  <!--főoldal témák vége-->
+
+<!--kapcsolat fül formja-->
+  <template id="forms.html">
+    <ons-page id="forms-page">
+      <ons-list>
+        <ons-list-header>Lépjen velünk kapcsolatba!</ons-list-header>
+        <ons-list-item class="input-items">
+          <div class="left">
+        
+          <label class="center">
+             <fieldset>
+              <ons-input id="name-input" placeholder="Neved" type="text" tabindex="1"></ons-input>
+            </fieldset>
+            
+            <fieldset>
+              <ons-input id="email-input" placeholder="Email cím" type="email" tabindex="2"></ons-input>
+            </fieldset>
+            
+
+            <fieldset>
+              <textarea class="textarea" tabindex="3" placeholder="Szöveg"></textarea>
+            </fieldset>
+            
+            <fieldset>
+              <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Küldés</button>
+            </fieldset>
+
+      </label>
+      </div>
+      </ons-list-item>
+        
+
+    </ons-page>
+  </template>
+  <!--kapcsolat fül form vége-->
+
+<!--fizetés és szállítás-->
+  <template id="animations.html">
+    <ons-page>
+      <div>
+  <h3>Fizetési és szállítási információk</h3>
+    <p>Lorem ipsum dolor Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </p>
+    </div>
+
+    </ons-page>
+  </template>
+
+
+<!--1.kis fotókönyv menün belüli szerkesztő rész/////////////////////////////////////////////////////////-->
+  <template id="kispb.html">
+    <ons-page>
+    <!--vissza a főoldalra-->
+      <ons-toolbar>
+        <div class="left">
+          <ons-back-button></ons-back-button>
+        </div>
+        <div class="center">
+          <img src="../www/img/logot.png" style="height: 90%;">
+        </div>
+      </ons-toolbar>
+<!--vissza a főoldalra vége-->
+     
+     <div data-role="page" data-url="/D:/Mobil app/Onsen/OnsenProba/www/kispb_gyak.html" tabindex="0" class="ui-page ui-page-theme-a ui-page-active">
+  
+
+<!--1.fotókönyv 1.oldal////////////////////////////////////////////////////////////////////////////////////-->
+  <ons-card>
+  <div class="book" id="change">
+         <div class="page" id="first">
+                  <output id="result"/></output>
+          </div>         
+           <div class="page" id="second">
+                  
+                  <input id="first_input" type="text" name="name" value="Könyv címe" />
+                  <div class="first_input_div" style="background: gray; position: relative; width:60%; height: 60%;">
+                    <input type="file" class="imgupload" style="display:none" style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;"/> 
+                    <button class="OpenImgUpload" style="width: 100%; height: 100%;">Fotó helye</button>
+                  </div>
+                  
+                  <div id="imageframe-1" class="imageframe button" style="left: 200px; top: 94px; width: 123px; height: 72px;">
+                    
+                  </div>
+         </div>          
+                  <output id="eredmeny"/></output>
+        
+</div>
+</ons-card>
+
+<script type="text/javascript">
+ 
+</script>
+
+          <!--select színek-->
+     <ons-select class="select" name="bgcolor" id="bgcolor" onchange="colorDiv()">
+     <div id="demo">
+     </div>
+     
+        <option value="#e4e8cf" data-content="<div class='editoption' style='background-color:#e4e8cf'></div>">willow brook</option>
+        <option value="#e9e6ce" data-content="<div class='editoption' style='background-color:#e9e6ce'></div>">orange white</option>
+        <option value="#e9e1ce" data-content="<div class='editoption' style='background-color:#e9e1ce'></div>">Quarter Spanish White</option>
+        <option value="#e9d9ce" data-content="<div class='editoption' style='background-color:#e9d9ce'></div>">Bizarr</option>
+        <option value="#e9cfce" data-content="<div class='editoption' style='background-color:#e9cfce'></div>">Vanilla Ice</option>
+
+        <option value="#e9ced8" data-content="<div class='editoption' style='background-color:#e9ced8'></div>">&nbsp;</option>
+        <option value="#e9cee2" data-content="<div class='editoption' style='background-color:#e9cee2'></div>">French Lilac</option>
+        <option value="#dfcee9" data-content="<div class='editoption' style='background-color:#dfcee9'></div>">Fog</option>
+        <option value="#d4cee9" data-content="<div class='editoption' style='background-color:#d4cee9'></div>">&nbsp;</option>
+        <option value="#ced2e9" data-content="<div class='editoption' style='background-color:#ced2e9'></div>">Periwinkle</option>
+        <option value="#cedce9" data-content="<div class='editoption' style='background-color:#cedce9'></div>">Hawkes Blue</option>
+
+        <option value="#cee6e9" data-content="<div class='editoption' style='background-color:#cee6e9'></div>">Mabel;</option>
+        <option value="#cee9e0" data-content="<div class='editoption' style='background-color:#cee9e0'></div>">Jagged Ice</option>
+        <option value="#cee9d3" data-content="<div class='editoption' style='background-color:#cee9d3'></div>">Granny Apple</option>
+        <option value="#dae9ce" data-content="<div class='editoption' style='background-color:#dae9ce'></div>">Peppermin;</option>
+        <option value="#ffffff" data-content="<div class='editoption' style='background-color:#ffffff'></div>">White</option>
+        <option value="#b1bc6e" data-content="<div class='editoption' style='background-color:#b1bc6e'></div>">Dark Khak</option>
+
+
+        <option value="#bfb76b" data-content="<div class='editoption' style='background-color:#bfb76b'></div>">&nbsp;</option>
+        <option value="#bfa76b" data-content="<div class='editoption' style='background-color:#bfa76b'></div>">Fallow;</option>
+        <option value="#bf8c6b" data-content="<div class='editoption' style='background-color:#bf8c6b'></div>">&nbsp;</option>
+        <option value="#bf6f6b" data-content="<div class='editoption' style='background-color:#bf6f6b'></div>">Contess</option>
+        <option value="#bf6b8b" data-content="<div class='editoption' style='background-color:#bf6b8b'></div>">Tapestry</option>
+        <option value="#bf6bab" data-content="<div class='editoption' style='background-color:#bf6bab'></div>">Fuchsia</option>
+        <option value="#a26bbf" data-content="<div class='editoption' style='background-color:#a26bbf'></div>">Lilac Bush</option>
+        <option value="#7f6bbf" data-content="<div class='editoption' style='background-color:#7f6bbf'></div>">Moody Blue</option>
+        <option value="#6b78bf" data-content="<div class='editoption' style='background-color:#6b78bf'></div>">Chetwode Blue</option>
+        <option value="#6b99bf" data-content="<div class='editoption' style='background-color:#6b99bf'></div>">Shakespeare</option>
+        <option value="#6bb6bf" data-content="<div class='editoption' style='background-color:#6bb6bf'></div>">Glacier</option>
+        <option value="#6bbfa5" data-content="<div class='editoption' style='background-color:#6bbfa5'></div>">Keppel</option>
+
+
+        <option value="#6bbf7c" data-content="<div class='editoption' style='background-color:#6bbf7c'></div>">Fern</option>
+        <option value="#93bf6b" data-content="<div class='editoption' style='background-color:#93bf6b'></div>">Olivine</option>
+        <option value="#949494" data-content="<div class='editoption' style='background-color:#949494'></div>">Suva Grey</option>
+        <option value="#c2d554" data-content="<div class='editoption' style='background-color:#c2d554'></div>">Conifer</option>
+        <option value="#dacc4f" data-content="<div class='editoption' style='background-color:#dacc4f'></div>">Confetti</option>
+        <option value="#dab24f" data-content="<div class='editoption' style='background-color:#dab24f'></div>">Rob Roy</option>
+        <option value="#da854f" data-content="<div class='editoption' style='background-color:#da854f'></div>">Raw Sienna</option>
+        <option value="#da564f" data-content="<div class='editoption' style='background-color:#da564f'></div>">Valencia</option>
+        <option value="#da4f84" data-content="<div class='editoption' style='background-color:#da4f84'></div>">Cranberry;</option>
+        <option value="#da4fb8" data-content="<div class='editoption' style='background-color:#da4fb8'></div>">Free Speech Magenta</option>
+        <option value="#aa4fda" data-content="<div class='editoption' style='background-color:#aa4fda'></div>">Medium Orchid</option>
+        <option value="#704fda" data-content="<div class='editoption' style='background-color:#704fda'></div>">Slate Blu</option>
+
+        <option value="#4f64da" data-content="<div class='editoption' style='background-color:#4f64da'></div>">&nbsp;</option>
+        <option value="#4f9bda" data-content="<div class='editoption' style='background-color:#4f9bda'></div>">&nbsp;</option>
+        <option value="#4fcbda" data-content="<div class='editoption' style='background-color:#4fcbda'></div>">&nbsp;</option>
+        <option value="#4fdaaf" data-content="<div class='editoption' style='background-color:#4fdaaf'></div>">&nbsp;</option>
+        <option value="#4fda6b" data-content="<div class='editoption' style='background-color:#4fda6b'></div>">&nbsp;</option>
+        <option value="#91da4f" data-content="<div class='editoption' style='background-color:#91da4f'></div>">&nbsp;</option>
+        <option value="#818181" data-content="<div class='editoption' style='background-color:#818181'></div>">&nbsp;</option>
+        <option value="#d4ed3d" data-content="<div class='editoption' style='background-color:#d4ed3d'></div>">&nbsp;</option>
+        <option value="#f3e136" data-content="<div class='editoption' style='background-color:#f3e136'></div>">&nbsp;</option>
+        <option value="#f3bc36" data-content="<div class='editoption' style='background-color:#f3bc36'></div>">&nbsp;</option>
+        <option value="#f38036" data-content="<div class='editoption' style='background-color:#f38036'></div>">&nbsp;</option>
+        <option value="#f33f36" data-content="<div class='editoption' style='background-color:#f33f36'></div>">&nbsp;</option>
+        <option value="#f3367e" data-content="<div class='editoption' style='background-color:#f3367e'></div>">&nbsp;</option>
+        <option value="#f336c5" data-content="<div class='editoption' style='background-color:#f336c5'></div>">&nbsp;</option>
+        <option value="#b136f3" data-content="<div class='editoption' style='background-color:#b136f3'></div>">&nbsp;</option>
+        <option value="#6336f3" data-content="<div class='editoption' style='background-color:#6336f3'></div>">&nbsp;</option>
+        <option value="#3653f3" data-content="<div class='editoption' style='background-color:#3653f3'></div>">&nbsp;</option>
+        <option value="#369df3" data-content="<div class='editoption' style='background-color:#369df3'></div>">&nbsp;</option>
+        <option value="#36def3" data-content="<div class='editoption' style='background-color:#36def3'></div>">&nbsp;</option>
+        <option value="#36f3b8" data-content="<div class='editoption' style='background-color:#36f3b8'></div>">&nbsp;</option>
+
+
+        <option value="#36f35c" data-content="<div class='editoption' style='background-color:#36f35c'></div>">malachit</option>
+        <option value="#8ff336" data-content="<div class='editoption' style='background-color:#8ff336'></div>">zöldessárga</option>
+        <option value="#6e6e6e" data-content="<div class='editoption' style='background-color:#6e6e6e'></div>">&nbsp;</option>
+        <option value="#93ab15" data-content="<div class='editoption' style='background-color:#93ab15'></div>">&nbsp;</option>
+        <option value="#b1a40f" data-content="<div class='editoption' style='background-color:#b1a40f'></div>">&nbsp;</option>
+        <option value="#b1830f" data-content="<div class='editoption' style='background-color:#b1830f'></div>">&nbsp;</option>
+        <option value="#b1500f" data-content="<div class='editoption' style='background-color:#b1500f'></div>">&nbsp;</option>
+        <option value="#b1170f" data-content="<div class='editoption' style='background-color:#b1170f'></div>">&nbsp;</option>
+        <option value="#b10f48" data-content="<div class='editoption' style='background-color:#b10f48'></div>">&nbsp;</option>
+        <option value="#b10f87" data-content="<div class='editoption' style='background-color:#b10f87'></div>">&nbsp;</option>
+        <option value="#7a0fb1" data-content="<div class='editoption' style='background-color:#7a0fb1'></div>">&nbsp;</option>
+        <option value="#380fb1" data-content="<div class='editoption' style='background-color:#380fb1'></div>">&nbsp;</option>
+        <option value="#0f25b1" data-content="<div class='editoption' style='background-color:#0f25b1'></div>">&nbsp;</option>
+        <option value="#0f63b1" data-content="<div class='editoption' style='background-color:#0f63b1'></div>">&nbsp;</option>
+        <option value="#0f9cb1" data-content="<div class='editoption' style='background-color:#0f9cb1'></div>">&nbsp;</option>
+        <option value="#0fb180" data-content="<div class='editoption' style='background-color:#0fb180'></div>">&nbsp;</option>
+        <option value="#0fb132" data-content="<div class='editoption' style='background-color:#0fb132'></div>">&nbsp;</option>
+        <option value="#5ab10f" data-content="<div class='editoption' style='background-color:#5ab10f'></div>">&nbsp;</option>
+        <option value="#414141" data-content="<div class='editoption' style='background-color:#414141'></div>">&nbsp;</option>
+
+     </ons-select>
+
+<script type = "text/javascript">
+  /*HÁTTÉRSZÍN*/
+    function colorDiv() {
+    var selection = document.getElementById('bgcolor').value;
+    var div = document.getElementById('change');
+    div.style.backgroundColor = '#e4e8c';
+
+    document.getElementById("demo").innerHTML = selection;
+
+    switch (selection) {
+        case "#e4e8cf":
+            div.style.backgroundColor = '#e4e8c';
+            break;
+        case "#e9e6ce":
+            div.style.backgroundColor = '#e9e6ce';
+            break;
+        case "#e9e1ce":
+            div.style.backgroundColor = '#e9e1ce';
+            break;
+        case "#e9d9ce":
+            div.style.backgroundColor = '#e9d9ce';
+            break;
+        case "#e9cfce":
+            div.style.backgroundColor = '#e9cfce';
+            break;
+
+       case "#e9ced8":
+            div.style.backgroundColor = '#e9ced8';
+            break;
+        case "#e9cee2":
+            div.style.backgroundColor = '#e9cee2';
+            break;
+        case "#dfcee9":
+            div.style.backgroundColor = '#dfcee9';
+            break;
+        case "#d4cee9":
+            div.style.backgroundColor = '#d4cee9';
+            break;
+        case "#ced2e9":
+            div.style.backgroundColor = '#ced2e9';
+            break;
+        case "#cedce9":
+            div.style.backgroundColor = '#cedce9';
+            break;
+
+
+       case "#cee6e9":
+            div.style.backgroundColor = '#cee6e9';
+            break;
+        case "#cee9e0":
+            div.style.backgroundColor = '#cee9e0';
+            break;
+        case "#cee9d3":
+            div.style.backgroundColor = '#cee9d3';
+            break;
+        case "#dae9ce":
+            div.style.backgroundColor = '#dae9ce';
+            break;
+        case "#ffffff":
+            div.style.backgroundColor = '#ffffff';
+            break;
+        case "#b1bc6e":
+            div.style.backgroundColor = '#b1bc6e';
+            break;
+
+
+            case "#bfb76b":
+            div.style.backgroundColor = '#bfb76b';
+            break;
+        case "#bfa76b":
+            div.style.backgroundColor = '#bfa76b';
+            break;
+        case "#bf8c6b":
+            div.style.backgroundColor = '#bf8c6b';
+            break;
+        case "#bf6f6b":
+            div.style.backgroundColor = '#bf6f6b';
+            break;
+        case "#bf6b8b":
+            div.style.backgroundColor = '#bf6b8b';
+            break;
+        case "#bf6bab":
+            div.style.backgroundColor = '#bf6bab';
+            break;
+        case "#a26bbf":
+            div.style.backgroundColor = '#a26bbf';
+            break;
+        case "#7f6bbf":
+            div.style.backgroundColor = '#7f6bbf';
+            break;
+        case "#6b78bf":
+            div.style.backgroundColor = '#6b78bf';
+            break;
+        case "#6b99bf":
+            div.style.backgroundColor = '#6b99bf';
+            break;
+        case "#6bb6bf":
+            div.style.backgroundColor = '#6bb6bf';
+            break;
+        case "#6bbfa5":
+            div.style.backgroundColor = '#6bbfa5';
+            break;
+
+        case "#6bbf7c":
+            div.style.backgroundColor = '#6bbf7c';
+            break;
+        case "#93bf6b":
+            div.style.backgroundColor = '#93bf6b';
+            break;
+        case "#949494":
+            div.style.backgroundColor = '#949494';
+            break;
+        case "#c2d554":
+            div.style.backgroundColor = '#c2d554';
+            break;
+        case "#dacc4f":
+            div.style.backgroundColor = '#dacc4f';
+            break;
+        case "#dab24f":
+            div.style.backgroundColor = '#dab24f';
+            break;
+        case "#da854f":
+            div.style.backgroundColor = '#da854f';
+            break;
+        case "#da564f":
+            div.style.backgroundColor = '#da564f';
+            break;
+        case "#da4f84":
+            div.style.backgroundColor = '#da4f84';
+            break;
+        case "#da4fb8":
+            div.style.backgroundColor = '#da4fb8';
+            break;
+        case "#aa4fda":
+            div.style.backgroundColor = '#aa4fda';
+            break;
+        case "#704fda":
+            div.style.backgroundColor = '#704fda';
+            break;
+
+
+        case "#4f64da":
+            div.style.backgroundColor = '#4f64da';
+            break;
+        case "#4f9bda":
+            div.style.backgroundColor = '#4f9bda';
+            break;
+        case "#4fcbda":
+            div.style.backgroundColor = '#4fcbda';
+            break;
+        case "#4fdaaf":
+            div.style.backgroundColor = '#4fdaaf';
+            break;
+        case "#4fda6b":
+            div.style.backgroundColor = '#4fda6b';
+            break;
+        case "#91da4f":
+            div.style.backgroundColor = '#91da4f';
+            break;
+        case "#818181":
+            div.style.backgroundColor = '#818181';
+            break;
+        case "#d4ed3d":
+            div.style.backgroundColor = '#d4ed3d';
+            break;
+        case "#f3e136":
+            div.style.backgroundColor = '#f3e136';
+            break;
+        case "#f3bc36":
+            div.style.backgroundColor = '#f3bc36';
+            break;
+        case "#f38036":
+            div.style.backgroundColor = '#f38036';
+            break;
+        case "#f33f36":
+            div.style.backgroundColor = '#f33f36';
+            break;
+        case "#f3367e":
+            div.style.backgroundColor = '#f3367e';
+            break;
+        case "#f336c5":
+            div.style.backgroundColor = '#f336c5';
+            break;
+        case "#b136f3":
+            div.style.backgroundColor = '#b136f3';
+            break;
+        case "#6336f3":
+            div.style.backgroundColor = '#6336f3';
+            break;
+        case "#3653f3":
+            div.style.backgroundColor = '#3653f3';
+            break;
+        case "#369df3":
+            div.style.backgroundColor = '#369df3';
+            break;
+        case "#36def3":
+            div.style.backgroundColor = '#36def3';
+            break;
+        case "#36f3b8":
+            div.style.backgroundColor = '#36f3b8';
+            break;
+
+
+             case "#36f35c":
+            div.style.backgroundColor = '#36f35c';
+            break;
+        case "#8ff336":
+            div.style.backgroundColor = '#8ff336';
+            break;
+        case "#6e6e6e":
+            div.style.backgroundColor = '#6e6e6e';
+            break;
+        case "#93ab15":
+            div.style.backgroundColor = '#93ab15';
+            break;
+        case "#b1a40f":
+            div.style.backgroundColor = '#b1a40f';
+            break;
+        case "#b1830f":
+            div.style.backgroundColor = '#b1830f';
+            break;
+        case "#b1500f":
+            div.style.backgroundColor = '#b1500f';
+            break;
+        case "#b1170f":
+            div.style.backgroundColor = '#b1170f';
+            break;
+        case "#b10f48":
+            div.style.backgroundColor = '#b10f48';
+            break;
+        case "#b10f87":
+            div.style.backgroundColor = '#b10f87';
+            break;
+        case "#7a0fb1":
+            div.style.backgroundColor = '#7a0fb1';
+            break;
+        case "#380fb1":
+            div.style.backgroundColor = '#380fb1';
+            break;
+        case "#0f25b1":
+            div.style.backgroundColor = '#0f25b1';
+            break;
+        case "#0f63b1":
+            div.style.backgroundColor = '#0f63b1';
+            break;
+        case "#0f9cb1":
+            div.style.backgroundColor = '#0f9cb1';
+            break;
+        case "#0fb180":
+            div.style.backgroundColor = '#0fb180';
+            break;
+        case "#0fb132":
+            div.style.backgroundColor = '#0fb132';
+            break;
+        case "#5ab10f":
+            div.style.backgroundColor = '#5ab10f';
+            break;
+        case "#414141":
+            div.style.backgroundColor = '#414141';
+            break;
+        
+    }
+  }  
+  
+ 
+  </script>
+
+  <!--select minta-->
+      <ons-select class="select" name="imgcolor" id="imgcolor" onchange="imgDiv()">
+     <div id="nemo">
+     </div>
+        <option value="blank" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_blank_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_blank_tn.1080.jpg">blank</option>
+          <option value="valentine_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_1_tn.1080.jpg">&nbsp;</option>
+          <option value="valentine_2" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_2_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_2_tn.1080.jpg">&nbsp;</option>
+          <option value="valentine_3" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_3_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_3_tn.1080.jpg">&nbsp;</option>
+          <option value="valentine_4" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_4_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_4_tn.1080.jpg">&nbsp;</option>
+          <option value="valentine_5" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_5_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_5_tn.1080.jpg">&nbsp;</option>
+          <option value="valentine_6" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_6_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_6_tn.1080.jpg">&nbsp;</option>
+          <option value="valentine_7" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_7_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_7_tn.1080.jpg">&nbsp;</option>
+          <option value="karneval_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_1_tn.1080.jpg">&nbsp;</option>
+          <option value="karneval_2" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_2_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_2_tn.1080.jpg">&nbsp;</option>
+          <option value="karneval_3" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_3_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_3_tn.1080.jpg">&nbsp;</option>
+          <option value="karneval_4" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_4_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_4_tn.1080.jpg">&nbsp;</option>
+          <option value="karneval_5" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_5_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_5_tn.1080.jpg">&nbsp;</option>
+          <option value="karneval_6" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_6_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_6_tn.1080.jpg">&nbsp;</option>
+          <option value="karneval_7" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_7_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_7_tn.1080.jpg">&nbsp;</option>
+          <option value="karneval_8" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_8_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_8_tn.1080.jpg">&nbsp;</option>
+          <option value="argyle_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_argyle_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_argyle_1_tn.1080.jpg">&nbsp;</option>
+          <option value="argyle_2" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_argyle_2_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_argyle_2_tn.1080.jpg">&nbsp;</option>
+          <option value="argyle_3" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_argyle_3_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_argyle_3_tn.1080.jpg">&nbsp;</option>
+          <option value="argyle_4" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_argyle_4_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_argyle_4_tn.1080.jpg">&nbsp;</option>
+          <option value="rozsak_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_rozsak_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_rozsak_1_tn.1080.jpg">&nbsp;</option>
+          <option value="tulipanok_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_tulipanok_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_tulipanok_1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="esernyok_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_esernyok_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_esernyok_1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="fuszalak_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_fuszalak_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_fuszalak_1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="baby_girl_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_baby_girl_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_baby_girl_1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="baby_boy_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_baby_boy_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_baby_boy_1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="baby_green_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_baby_green_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_baby_green_1_tn.1080.jpg">&nbnbsp;</option>
+                                          <option value="viragok_mehecske1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_viragok_mehecske1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_viragok_mehecske1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="ceruzak_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_ceruzak_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_ceruzak_1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="babakocsi_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_babakocsi_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_babakocsi_1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="babarucik_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_babarucik_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_babarucik_1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="kis_golyak_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_kis_golyak_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_kis_golyak_1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="jatekok_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_jatekok_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_jatekok_1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="kis_pottyos_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_kis_pottyos_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_kis_pottyos_1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="nagy_golyak_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_nagy_golyak_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_nagy_golyak_1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="nagy_pottyos_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_nagy_pottyos_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_nagy_pottyos_1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="405449" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_405449_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_405449_tn.1080.jpg">&nbsp;</option>
+                                          <option value="201159" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_201159_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_201159_tn.1080.jpg">&nbsp;</option>
+                                          <option value="434269" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_434269_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_434269_tn.1080.jpg">&nbsp;</option>
+                                          <option value="821391" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_821391_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_821391_tn.1080.jpg">&nbsp;</option>
+                                          <option value="021464" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_021464_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_021464_tn.1080.jpg">&nbsp;</option>
+                                          <option value="112999" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_112999_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_112999_tn.1080.jpg">&nbsp;</option>
+                                          <option value="580793" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_580793_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_580793_tn.1080.jpg">&nbsp;</option>
+                                          <option value="198428" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_198428_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_198428_tn.1080.jpg">&nbsp;</option>
+                                          <option value="841291" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_841291_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_841291_tn.1080.jpg">&nbsp;</option>
+                                          <option value="223442" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_223442_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_223442_tn.1080.jpg">&nbsp;</option>
+                                          <option value="506133" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_506133_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_506133_tn.1080.jpg">&nbsp;</option>
+                                          <option value="694311" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_694311_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_694311_tn.1080.jpg">&nbsp;</option>
+                                          <option value="392388" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_392388_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_392388_tn.1080.jpg">&nbsp;</option>
+                                          <option value="900630" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_900630_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_900630_tn.1080.jpg">&nbsp;</option>
+                                          <option value="pottyos" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_pottyos_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_pottyos_tn.1080.jpg">&nbsp;</option>
+                                          <option value="cikkcakk" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_cikkcakk_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_cikkcakk_tn.1080.jpg">&nbsp;</option>
+                                          <option value="hullamok" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_hullamok_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_hullamok_tn.1080.jpg">&nbsp;</option>
+                                          <option value="abrosz" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_abrosz_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_abrosz_tn.1080.jpg">&nbsp;</option>
+                                          <option value="ornament" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_ornament_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_ornament_tn.1080.jpg">&nbsp;</option>
+                                          <option value="gotikus2" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_gotikus2_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_gotikus2_tn.1080.jpg">&nbsp;</option>
+                                          <option value="viragok" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_viragok_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_viragok_tn.1080.jpg">&nbsp;</option>
+                                          <option value="levelek" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_levelek_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_levelek_tn.1080.jpg">&nbsp;</option>
+                                          <option value="indas" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_indas_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_indas_tn.1080.jpg">&nbsp;</option>
+                                          <option value="baglyok" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_baglyok_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_baglyok_tn.1080.jpg">&nbsp;</option>
+                                          <option value="hopihe" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_hopihe_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_hopihe_tn.1080.jpg">&nbsp;</option>
+                                          <option value="pitypang" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_pitypang_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_pitypang_tn.1080.jpg">&nbsp;</option>
+                                          <option value="hoeses" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_hoeses_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_hoeses_tn.1080.jpg">&nbsp;</option>
+                                          <option value="vilagterkep" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_vilagterkep_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_vilagterkep_tn.1080.jpg">&nbsp;</option>
+                                          <option value="faminta" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_faminta_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_faminta_tn.1080.jpg">&nbsp;</option>
+                                          <option value="kopott" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_kopott_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_kopott_tn.1080.jpg">&nbsp;</option>
+                                          <option value="ferdeabrosz" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_ferdeabrosz_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_ferdeabrosz_tn.1080.jpg">&nbsp;</option>
+                                          <option value="nagyiv" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_nagyiv_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_nagyiv_tn.1080.jpg">&nbsp;</option>
+                                          <option value="konyvcsik1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_konyvcsik1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_konyvcsik1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="minta1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_minta1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_minta1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="hopiheslogos" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_hopiheslogos_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_hopiheslogos_tn.1080.jpg">&nbsp;</option>
+                                          <option value="csikoscsillagos" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_csikoscsillagos_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_csikoscsillagos_tn.1080.jpg">&nbsp;</option>
+                                          <option value="pottyoskekszalagos" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_pottyoskekszalagos_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_pottyoskekszalagos_tn.1080.jpg">&nbsp;</option>
+                                          <option value="csikospottyos" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_csikospottyos_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_csikospottyos_tn.1080.jpg">&nbsp;</option>
+                                          <option value="rozsas2" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_rozsas2_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_rozsas2_tn.1080.jpg">&nbsp;</option>
+                                          <option value="rozsas1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_rozsas1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_rozsas1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="hatterlevelek" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_hatterlevelek_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_hatterlevelek_tn.1080.jpg">&nbsp;</option>
+                                          <option value="karacsonyfull" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_karacsonyfull_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_karacsonyfull_tn.1080.jpg">&nbsp;</option>
+                                          <option value="kovirag" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_kovirag_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_kovirag_tn.1080.jpg">&nbsp;</option>
+                                          <option value="kovirag2" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_kovirag2_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_kovirag2_tn.1080.jpg">&nbsp;</option>
+                                          <option value="cikkcakkpotty" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_cikkcakkpotty_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_cikkcakkpotty_tn.1080.jpg">&nbsp;</option>
+                                          <option value="barnakacskaringos" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_barnakacskaringos_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_barnakacskaringos_tn.1080.jpg">&nbsp;</option>
+                                          <option value="viragostapeta" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_viragostapeta_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_viragostapeta_tn.1080.jpg">&nbsp;</option>
+                                          <option value="foltos" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_foltos_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_foltos_tn.1080.jpg">&nbsp;</option>
+                                          <option value="regipapir" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_regipapir_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_regipapir_tn.1080.jpg">&nbsp;</option>
+                                          <option value="foszlotapeta" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_foszlotapeta_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_foszlotapeta_tn.1080.jpg">&nbsp;</option>
+                                          <option value="kopas" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_kopas_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_kopas_tn.1080.jpg">&nbsp;</option>
+                                          <option value="mozgasb" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_mozgasb_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_mozgasb_tn.1080.jpg">&nbsp;</option>
+                                          <option value="mozgaskek" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_mozgaskek_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_mozgaskek_tn.1080.jpg">&nbsp;</option>
+                                          <option value="mozgasvirag" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_mozgasvirag_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_mozgasvirag_tn.1080.jpg">&nbsp;</option>
+                                          <option value="indas2" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_indas2_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_indas2_tn.1080.jpg">&nbsp;</option>
+                                          <option value="zoldbarokk" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_zoldbarokk_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_zoldbarokk_tn.1080.jpg">&nbsp;</option>
+                                          <option value="vizjeles" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_vizjeles_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_vizjeles_tn.1080.jpg">&nbsp;</option>
+                                          <option value="761625" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_761625_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_761625_tn.1080.jpg">&nbsp;</option>
+                                          <option value="874320" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_874320_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_874320_tn.1080.jpg">&nbsp;</option>
+                                          <option value="707180" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_707180_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_707180_tn.1080.jpg">&nbsp;</option>
+                                          <option value="387819" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_387819_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_387819_tn.1080.jpg">&nbsp;</option>
+                                          <option value="106535" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_106535_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_106535_tn.1080.jpg">&nbsp;</option>
+                                          <option value="246469" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_246469_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_246469_tn.1080.jpg">&nbsp;</option>
+                                          <option value="284205" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_284205_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_284205_tn.1080.jpg">&nbsp;</option>
+                                          <option value="000670" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_000670_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_000670_tn.1080.jpg">&nbsp;</option>
+                                          <option value="599591" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_599591_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_599591_tn.1080.jpg">&nbsp;</option>
+                                          <option value="870745" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_870745_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_870745_tn.1080.jpg">&nbsp;</option>
+                                          <option value="588788" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_588788_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_588788_tn.1080.jpg">&nbsp;</option>
+                                          <option value="523583" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_523583_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_523583_tn.1080.jpg">&nbsp;</option>
+                                          <option value="590483" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_590483_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_590483_tn.1080.jpg">&nbsp;</option>
+                                          <option value="476767" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_476767_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_476767_tn.1080.jpg">&nbsp;</option>
+                                          <option value="761187" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_761187_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_761187_tn.1080.jpg">&nbsp;</option>
+                                          <option value="410920" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_410920_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_410920_tn.1080.jpg">&nbsp;</option>
+                                          <option value="187397" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_187397_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_187397_tn.1080.jpg">&nbsp;</option>
+                                          <option value="026569" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_026569_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_026569_tn.1080.jpg">&nbsp;</option>
+                                          <option value="899681" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_899681_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_899681_tn.1080.jpg">&nbsp;</option>
+                                          <option value="973915" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_973915_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_973915_tn.1080.jpg">&nbsp;</option>
+                                          <option value="500451" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_500451_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_500451_tn.1080.jpg">&nbsp;</option>
+                                          <option value="557918" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_557918_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_557918_tn.1080.jpg">&nbsp;</option>
+                                          <option value="608952" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_608952_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_608952_tn.1080.jpg">&nbsp;</option>
+                                          <option value="353693" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_353693_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_353693_tn.1080.jpg">&nbsp;</option>
+                                          <option value="811017" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_811017_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_811017_tn.1080.jpg">&nbsp;</option>
+                                          <option value="313445" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_313445_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_313445_tn.1080.jpg">&nbsp;</option>
+                                          <option value="883860" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_883860_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_883860_tn.1080.jpg">&nbsp;</option>
+                                          <option value="733919" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_733919_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_733919_tn.1080.jpg">&nbsp;</option>
+                                          <option value="544744" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_544744_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_544744_tn.1080.jpg">&nbsp;</option>
+                                          <option value="031654" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_031654_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_031654_tn.1080.jpg">&nbsp;</option>
+                                          <option value="194108" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_194108_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_194108_tn.1080.jpg">&nbsp;</option>
+                                          <option value="545352" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_545352_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_545352_tn.1080.jpg">&nbsp;</option>
+                                          <option value="428211" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_428211_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_428211_tn.1080.jpg">&nbsp;</option>
+                                          <option value="927720" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_927720_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_927720_tn.1080.jpg">&nbsp;</option>
+                                          <option value="036426" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_036426_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_036426_tn.1080.jpg">&nbsp;</option>
+                                          <option value="160236" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_160236_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_160236_tn.1080.jpg">&nbsp;</option>
+                                          <option value="018726" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_018726_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_018726_tn.1080.jpg">&nbsp;</option>
+                                          <option value="210926" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_210926_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_210926_tn.1080.jpg">&nbsp;</option>
+                                          <option value="814244" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_814244_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_814244_tn.1080.jpg">&nbsp;</option>
+                                          <option value="074131" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_074131_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_074131_tn.1080.jpg">&nbsp;</option>
+                                          <option value="053010" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_053010_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_053010_tn.1080.jpg">&nbsp;</option>
+                                          <option value="989878" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_989878_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_989878_tn.1080.jpg">&nbsp;</option>
+                                          <option value="647660" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_647660_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_647660_tn.1080.jpg">&nbsp;</option>
+                                          <option value="881609" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_881609_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_881609_tn.1080.jpg">&nbsp;</option>
+                                          <option value="908809" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_908809_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_908809_tn.1080.jpg">&nbsp;</option>
+                                          <option value="788999" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_788999_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_788999_tn.1080.jpg">&nbsp;</option>
+                                          <option value="498067" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_498067_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_498067_tn.1080.jpg">&nbsp;</option>
+                                          <option value="977889" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_977889_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_977889_tn.1080.jpg">&nbsp;</option>
+                                          <option value="406437" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_406437_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_406437_tn.1080.jpg">&nbsp;</option>
+                                          <option value="815048" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_815048_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_815048_tn.1080.jpg">&nbsp;</option>
+                                          <option value="609782" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_609782_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_609782_tn.1080.jpg">&nbsp;</option>
+                                          <option value="017640" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_017640_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_017640_tn.1080.jpg">&nbsp;</option>
+                                          <option value="426817" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_426817_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_426817_tn.1080.jpg">&nbsp;</option>
+                                          <option value="504235" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_504235_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_504235_tn.1080.jpg">&nbsp;</option>
+                                          <option value="803987" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_803987_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_803987_tn.1080.jpg">&nbsp;</option>
+                                          <option value="335558" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_335558_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_335558_tn.1080.jpg">&nbsp;</option>
+                                          <option value="065854" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_065854_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_065854_tn.1080.jpg">&nbsp;</option>
+                                          <option value="747992" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_747992_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_747992_tn.1080.jpg">&nbsp;</option>
+                                          <option value="695426" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_695426_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_695426_tn.1080.jpg">&nbsp;</option>
+                                          <option value="251882" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_251882_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_251882_tn.1080.jpg">&nbsp;</option>
+                                          <option value="528049" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_528049_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_528049_tn.1080.jpg">&nbsp;</option>
+                                          <option value="743076" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_743076_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_743076_tn.1080.jpg">&nbsp;</option>
+                                          <option value="150986" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_150986_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_150986_tn.1080.jpg">&nbsp;</option>
+                                          <option value="366980" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_366980_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_366980_tn.1080.jpg">&nbsp;</option>
+                                          <option value="571910" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_571910_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_571910_tn.1080.jpg">&nbsp;</option>
+                                          <option value="007918" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_007918_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_007918_tn.1080.jpg">&nbsp;</option>
+                                          <option value="580233" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_580233_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_580233_tn.1080.jpg">&nbsp;</option>
+                                          <option value="804596" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_804596_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_804596_tn.1080.jpg">&nbsp;</option>
+                                          <option value="081667" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_081667_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_081667_tn.1080.jpg">&nbsp;</option>
+                                          <option value="026681" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_026681_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_026681_tn.1080.jpg">&nbsp;</option>
+                                          <option value="073202" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_073202_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_073202_tn.1080.jpg">&nbsp;</option>
+                                          <option value="285459" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_285459_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_285459_tn.1080.jpg">&nbsp;</option>
+                                          <option value="316945" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_316945_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_316945_tn.1080.jpg">&nbsp;</option>
+                                          <option value="391021" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_391021_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_391021_tn.1080.jpg">&nbsp;</option>
+                                          <option value="706273" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_706273_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_706273_tn.1080.jpg">&nbsp;</option>
+                                          <option value="410173" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_410173_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_410173_tn.1080.jpg">&nbsp;</option>
+                                          <option value="622969" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_622969_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_622969_tn.1080.jpg">&nbsp;</option>
+                                          <option value="409817" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_409817_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_409817_tn.1080.jpg">&nbsp;</option>
+                                          <option value="445845" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_445845_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_445845_tn.1080.jpg">&nbsp;</option>
+                                          <option value="148711" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_148711_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_148711_tn.1080.jpg">&nbsp;</option>
+                                          <option value="753940" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_753940_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_753940_tn.1080.jpg">&nbsp;</option>
+                                          <option value="537493" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_537493_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_537493_tn.1080.jpg">&nbsp;</option>
+                                          <option value="500609" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_500609_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_500609_tn.1080.jpg">&nbsp;</option>
+                                          <option value="134020" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_134020_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_134020_tn.1080.jpg">&nbsp;</option>
+                                          <option value="872470" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_872470_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_872470_tn.1080.jpg">&nbsp;</option>
+                                          <option value="388786" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_388786_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_388786_tn.1080.jpg">&nbsp;</option>
+                                          <option value="929636" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_929636_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_929636_tn.1080.jpg">&nbsp;</option>
+                                          <option value="289949" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_289949_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_289949_tn.1080.jpg">&nbsp;</option>
+                                          <option value="066196" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_066196_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_066196_tn.1080.jpg">&nbsp;</option>
+                                          <option value="346839" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_346839_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_346839_tn.1080.jpg">&nbsp;</option>
+                                          <option value="819647" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_819647_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_819647_tn.1080.jpg">&nbsp;</option>
+                                          <option value="102194" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_102194_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_102194_tn.1080.jpg">&nbsp;</option>
+                                          <option value="671489" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_671489_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_671489_tn.1080.jpg">&nbsp;</option>
+                                          <option value="476611" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_476611_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_476611_tn.1080.jpg">&nbsp;</option>
+                                          <option value="591661" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_591661_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_591661_tn.1080.jpg">&nbsp;</option>
+                                          <option value="242168" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_242168_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_242168_tn.1080.jpg">&nbsp;</option>
+                                      </select>
+     </ons-select>
+
+<script type = "text/javascript">
+  /*HÁTTÉR*/
+    function imgDiv() {
+    var selection = document.getElementById('imgcolor').value;
+    var div = document.getElementById('change');
+    div.style.backgroundColor = 'blank';
+
+    document.getElementById("nemo").innerHTML = selection;
+
+    switch (selection) {
+        case "blank":
+             div.src= url("https://hu.internetprint.eu/images/frontend2/photobook/decor_blank_tn.1080.jpg";
+            break;
+        case "valentine_1":
+            div.style.backgroundColor = url("https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_1_tn.1080.jpg");
+            break;
+        case "minta3":
+            div.style.backgroundColor = 'blue';
+            break;
+        case "minta4":
+            div.style.backgroundColor = 'yellow';
+            break;
+        case "minta5":
+            div.style.backgroundColor = 'green';
+            break;
+
+    }
+} 
+  </script>
+
+
+      <ons-select class="select">
+         <option value="basic">Dekoráció</option>
+        <option value="1">Piros</option>
+        <option value="2">Kék</option>
+        <option value="3">Zöld</option>
+        <option value="4">Szürke</option>
+     </ons-select>
+
+      <ons-select class="select">
+         <option value="basic">Oldal elrendezés</option>
+        <option value="1">Piros</option>
+        <option value="2">Kék</option>
+        <option value="3">Zöld</option>
+        <option value="4">Szürke</option>
+     </ons-select>
+
+
+     <script type="text/javascript">
+       var MyPage = React.createClass({
+  getInitialState: function() {
+    return {
+      modifier: ''
+    };
+  },
+
+  renderToolbar() {
+    return (
+      <Ons.Toolbar>
+        <div className='center'>Select input</div>
+      </Ons.Toolbar>
+    );
+  },
+
+  editSelects(event) {
+    this.setState({modifier: event.target.value});
+  },
+
+  render: function() {
+    return (
+      <Ons.Page renderToolbar={this.renderToolbar}>
+        <div style={{margin: 50}}>
+          <Ons.Select id="choose-sel" value={this.state.modifier} modifier={this.state.modifier} onChange={this.editSelects}>
+            <option value="basic">Basic</option>
+            <option value="material">Material</option>
+            <option value="underbar">Underbar</option>
+          </Ons.Select>
+        </div>
+      </Ons.Page>
+    );
+  }
+});
+
+ons.ready(function() {
+  ReactDOM.render(<MyPage />, document.getElementById('app'));
+});
+     </script>
+
+  
+
+<!--1. fotókönyv 2.oldal//////////////////////////////////////////////////////////////////////////////////-->
+<ons-card>
+  <div class="book">
+        <div class="box">
+         <!-- <div class="js--image-preview"></div> -->
+
+         <div class="page upload-options" id="first" style="position: relative; width:100%; height: 100%; ">
+                  <div class="js--image-preview img">
+                  <input type="file" class="image-upload" accept="image/*" style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;"/>
+          </div>
+          </div>
+          </div> 
+
+  
+           <div class="box page upload-options" id="second">
+           <div class="js--image-preview img">
+            <input type="file" class="image-upload" accept="image/*" style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;"/> 
+            </div>
+            
+         </div>   
+         <!-- </div>        -->
+                  <!-- <output id="eredmeny"/></output> -->
+       
+  </div>
+    <button class="imgRotation" onclick="imgRotate()">Forgasd</button>    
+    <button class="imgRotation" onclick="imgRotate()">Forgasd</button>   
+  </ons-card>
+
+ 
+
+ 
+  <script type="text/javascript">
+  /*image rotate jquery*/
+    $(document).ready(function(imgRotate) {
+
+
+      var degrees = 0;
+      $('.imgRotation').click(function rotateMe(e) {
+
+        degrees += 90;
+
+        //$('.img').addClass('rotated'); // for one time rotation
+
+        $('.img').css({
+
+          'transform': 'rotate(' + degrees + 'deg)',
+          '-ms-transform': 'rotate(' + degrees + 'deg)',
+          '-moz-transform': 'rotate(' + degrees + 'deg)',
+          '-webkit-transform': 'rotate(' + degrees + 'deg)',
+          '-o-transform': 'rotate(' + degrees + 'deg)'
+        });
+
+      })
+    });
+
+  /*image rotate jquery end*/
+
+ /*img upload*/
+  function initImageUpload(box) {    
+  let uploadField = box.querySelector('.image-upload'); 
+
+
+  uploadField.addEventListener('change', getFile);
+
+  function getFile(e){
+    let file = e.currentTarget.files[0];
+    checkType(file);
+  }
+  
+  function previewImage(file){
+    let thumb = box.querySelector('.js--image-preview'),
+        reader = new FileReader();
+
+    reader.onload = function() {
+      thumb.style.backgroundImage = 'url(' + reader.result + ')';
+    }
+    reader.readAsDataURL(file);
+    thumb.className += ' js--no-default';
+  }
+
+  function checkType(file){
+    let imageType = /image.*/;
+    if (!file.type.match(imageType)) {
+      throw 'Datei ist kein Bild';
+    } else if (!file){
+      throw 'Kein Bild gewählt';
+    } else {
+      previewImage(file);
+    }
+  }
+  
+}
+
+// initialize box-scope
+var boxes = document.querySelectorAll('.box');
+
+for (let i = 0; i < boxes.length; i++) {
+  let box = boxes[i];
+  initDropEffect(box);
+  initImageUpload(box);
+}
+
+
+
+/// drop-effect
+function initDropEffect(box){
+  let area, drop, areaWidth, areaHeight, maxDistance, dropWidth, dropHeight, x, y;
+  
+  // get clickable area for drop effect
+  area = box.querySelector('.js--image-preview');
+  area.addEventListener('click', fireRipple);
+  
+  function fireRipple(e){
+    area = e.currentTarget
+    // create drop
+    if(!drop){
+      drop = document.createElement('span');
+      drop.className = 'drop';
+      this.appendChild(drop);
+    }
+    // reset animate class
+    drop.className = 'drop';
+    
+    // calculate dimensions of area (longest side)
+    areaWidth = getComputedStyle(this, null).getPropertyValue("width");
+    areaHeight = getComputedStyle(this, null).getPropertyValue("height");
+    maxDistance = Math.max(parseInt(areaWidth, 10), parseInt(areaHeight, 10));
+
+    // set drop dimensions to fill area
+    drop.style.width = maxDistance + 'px';
+    drop.style.height = maxDistance + 'px';
+    
+    // calculate dimensions of drop
+    dropWidth = getComputedStyle(this, null).getPropertyValue("width");
+    dropHeight = getComputedStyle(this, null).getPropertyValue("height");
+    
+    // calculate relative coordinates of click
+    // logic: click coordinates relative to page - parent's position relative to page - half of self height/width to make it controllable from the center
+    x = e.pageX - this.offsetLeft - (parseInt(dropWidth, 10)/2);
+    y = e.pageY - this.offsetTop - (parseInt(dropHeight, 10)/2) - 30;
+    
+    // position drop and animate
+    drop.style.top = y + 'px';
+    drop.style.left = x + 'px';
+    drop.className += ' animate';
+    e.stopPropagation();
+    
+  }
+}
+
+  </script>
+  <!-- img upload vége -->
+
+<!--select színek-->
+     <ons-select class="select" name="bgcolor" id="bgcolor" onchange="colorDiv()">
+     <div id="demo">
+     </div>
+        <option value=szurke> Szürke</option>
+        <option value=feher> Fehér</option> 
+        <option value=kek> Kék</option>
+        <option value=yellow> Sárga</option>
+        <option value=green> Zöld</option>
+     </ons-select>
+
+
+  <!--select minta-->
+      <ons-select class="select" name="imgcolor" id="imgcolor" onchange="imgDiv()">
+     <div id="nemo">
+     </div>
+         <option value="minta1">Minta1</option>
+        <option value="minta2">Minta2</option>
+        <option value="minta3">Minta3</option>
+        <option value="minta4">Minta4</option>
+        <option value="minta5">Minta5</option>
+     </ons-select>
+
+
+
+
+      <ons-select class="select">
+         <option value="basic">Dekoráció</option>
+        <option value="1">Piros</option>
+        <option value="2">Kék</option>
+        <option value="3">Zöld</option>
+        <option value="4">Szürke</option>
+     </ons-select>
+
+      <ons-select class="select">
+         <option value="basic">Oldal elrendezés</option>
+        <option value="1">Piros</option>
+        <option value="2">Kék</option>
+        <option value="3">Zöld</option>
+        <option value="4">Szürke</option>
+     </ons-select>
+
+
+  <!--1. fotókönyv 3.oldal////////////////////////////////////////////////////////////////////////////////-->
+ <ons-card>
+  <div class="book">
+        <div class="box">
+         <div class="js--image-preview"></div>
+         <div class="page upload-options" id="first">
+
+                  <label>
+                  <input type="file" class="image-upload" accept="image/*"/>
+                  </label>
+               
+          </div>
+          </div>     
+           <div class="box page upload-options" id="second">
+            <input type="file" class="image-upload" accept="image/*" /> 
+            <div class="js--image-preview"></div>
+            <label>
+                  
+                </label>
+         </div>   
+
+       
+  </div>        
+  </ons-card>
+
+  <!--1.fotókönyv első oldal vége//////////////////////////////////////////////////////////////////////////-->
+    <ons-button onclick="fn.pushPage({'id': 'kispbtwo.html', 'title': 'Kis Fotókönyv'})" id="next" style="height: 30px; text-align: right; margin-left: 5%;">
+     Vissza
+      </ons-button>
+
+     <ons-button onclick="fn.pushPage({'id': 'kispbtwo.html', 'title': 'Kis Fotókönyv'})" class="next" style="height: 30px; text-align: right; margin-left: 5%;">
+     Következő
+      </ons-button>
+
+<!--2.fotókönyv köv. oldal//////////////////////////////////////////////////////////////////////////////// -->
+
+<template id="kispbtwo.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-back-button>Vissza</ons-back-button>
+      </div>
+      <div class="center"></div>    
+    </ons-toolbar>
+
+<!--select kezdete--> 
+<!--select színek-->
+     <ons-select class="select" name="bgcolor" id="bgcolor" onchange="colorDiv()">
+     <div id="demo">
+     </div>
+        <option value=szurke> Szürke</option>
+        <option value=feher> Fehér</option> 
+        <option value=kek> Kék</option>
+        <option value=yellow> Sárga</option>
+        <option value=green> Zöld</option>
+     </ons-select>
+
+
+  <!--select minta-->
+      <ons-select class="select" name="imgcolor" id="imgcolor" onchange="imgDiv()">
+     <div id="nemo">
+     </div>
+         <option value="minta1">Minta1</option>
+        <option value="minta2">Minta2</option>
+        <option value="minta3">Minta3</option>
+        <option value="minta4">Minta4</option>
+        <option value="minta5">Minta5</option>
+     </ons-select>
+
+
+
+
+      <ons-select class="select">
+         <option value="basic">Dekoráció</option>
+        <option value="1">Piros</option>
+        <option value="2">Kék</option>
+        <option value="3">Zöld</option>
+        <option value="4">Szürke</option>
+     </ons-select>
+
+      <ons-select class="select">
+         <option value="basic">Oldal elrendezés</option>
+        <option value="1">Piros</option>
+        <option value="2">Kék</option>
+        <option value="3">Zöld</option>
+        <option value="4">Szürke</option>
+     </ons-select>
+
+
+<!--2.fotókönyv 1.oldal////////////////////////////////////////////////////////////////////////////////-->
+  <ons-card>
+  <div class="book">
+         <div class="page" id="first">
+                  <input id="files" type="file" /> 
+                  <output id="result"/></output>
+          </div>         
+           <div class="page" id="second">
+                  <input id="kepek" type="file"/> 
+         </div>          
+                  <output id="eredmeny"/></output>
+          <ons-button type="button" id="clear" class=" ui-btn ui-shadow ui-corner-all">Clear</ons-button>
+  </div>        
+  </ons-card>
+  <!--2.fotókönyv 1.oldal vége/////////////////////////////////////////////////////////////////////////-->
+
+  <!--select kezdete--> 
+<!--select színek-->
+     <ons-select class="select" name="bgcolor" id="bgcolor" onchange="colorDiv()">
+     <div id="demo">
+     </div>
+        <option value=szurke> Szürke</option>
+        <option value=feher> Fehér</option> 
+        <option value=kek> Kék</option>
+        <option value=yellow> Sárga</option>
+        <option value=green> Zöld</option>
+     </ons-select>
+
+
+  <!--select minta-->
+      <ons-select class="select" name="imgcolor" id="imgcolor" onchange="imgDiv()">
+     <div id="nemo">
+     </div>
+         <option value="minta1">Minta1</option>
+        <option value="minta2">Minta2</option>
+        <option value="minta3">Minta3</option>
+        <option value="minta4">Minta4</option>
+        <option value="minta5">Minta5</option>
+     </ons-select>
+
+
+
+
+      <ons-select class="select">
+        <option value="basic">Dekoráció</option>
+        <option value="1">Piros</option>
+        <option value="2">Kék</option>
+        <option value="3">Zöld</option>
+        <option value="4">Szürke</option>
+     </ons-select>
+
+      <ons-select class="select">
+        <option value="basic">Oldal elrendezés</option>
+        <option value="1">Piros</option>
+        <option value="2">Kék</option>
+        <option value="3">Zöld</option>
+        <option value="4">Szürke</option>
+     </ons-select>
+
+
+<!--2.fotókönyv 2.oldal////////////////////////////////////////////////////////////////////////////////-->
+<ons-card>
+  <div class="book">
+         <div class="page" id="first">
+                  <input id="files" type="file" /> 
+                  <output id="result"/></output>
+          </div>         
+           <div class="page" id="second">
+                  <input id="kepek" type="file"/> 
+         </div>          
+                  <output id="eredmeny"/></output>
+          <ons-button type="button" id="clear" class=" ui-btn ui-shadow ui-corner-all">Clear</ons-button>
+  </div>        
+  </ons-card>
+<!--2.fotókönyv 2.oldal vége////////////////////////////////////////////////////////////////////////////////-->
+
+<!--select kezdete--> 
+<!--select színek-->
+     <ons-select class="select" name="bgcolor" id="bgcolor" onchange="colorDiv()">
+     <div id="demo">
+     </div>
+        <option value=szurke> Szürke</option>
+        <option value=feher> Fehér</option> 
+        <option value=kek> Kék</option>
+        <option value=yellow> Sárga</option>
+        <option value=green> Zöld</option>
+     </ons-select>
+
+
+  <!--select minta-->
+      <ons-select class="select" name="imgcolor" id="imgcolor" onchange="imgDiv()">
+     <div id="nemo">
+     </div>
+        <option value="minta1">Minta1</option>
+        <option value="minta2">Minta2</option>
+        <option value="minta3">Minta3</option>
+        <option value="minta4">Minta4</option>
+        <option value="minta5">Minta5</option>
+     </ons-select>
+
+
+
+
+      <ons-select class="select">
+        <option value="basic">Dekoráció</option>
+        <option value="1">Piros</option>
+        <option value="2">Kék</option>
+        <option value="3">Zöld</option>
+        <option value="4">Szürke</option>
+     </ons-select>
+
+      <ons-select class="select">
+        <option value="basic">Oldal elrendezés</option>
+        <option value="1">Piros</option>
+        <option value="2">Kék</option>
+        <option value="3">Zöld</option>
+        <option value="4">Szürke</option>
+     </ons-select>
+
+     
+
+  <!--2.fotókönyv 3.oldal////////////////////////////////////////////////////////////////////////////////-->
+  <ons-card>
+  <div class="book">
+         <div class="page" id="first">
+                  <input id="files" type="file" /> 
+                  <output id="result"/></output>
+          </div>         
+           <div class="page" id="second">
+                  <input id="kepek" type="file"/> 
+         </div>          
+                  <output id="eredmeny"/></output>
+          <ons-button type="button" id="clear" class=" ui-btn ui-shadow ui-corner-all">Clear</ons-button>
+  </div>        
+  </ons-card>
+  <!--2.fotókönyv 3.oldal vége ///////////////////////////////////////////////////////////////////////////-->
+  <ons-button onclick="fn.pushPage({'id': 'kispbthree.html', 'title': 'Kis Fotókönyv'})" class="next" style="height: 30px; text-align: right; margin-left: 5%;">Vissza
+</ons-button>
+<ons-button onclick="fn.pushPage({'id': 'kispbthree.html', 'title': 'Kis Fotókönyv'})" class="next" style="height: 30px; text-align: right; margin-left: 5%;">Következő
+</ons-button>
+<!-- 2.fotókönyv vége ////////////////////////////////////////////////////////////////////////////////-->
+  </ons-page>
+  </template>
+
+  
+
+  <!--3.fotókönyv köv. oldal////////////////////////////////////////////////////////////////////////////// --> 
+<template id="kispbthree.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-back-button>Vissza</ons-back-button>
+      </div>
+      <div class="center"></div>    
+    </ons-toolbar>
+
+<!--select kezdete--> 
+<!--select színek-->
+     <ons-select class="select" name="bgcolor" id="bgcolor" onchange="colorDiv()">
+     <div id="demo">
+     </div>
+        <option value=szurke> Szürke</option>
+        <option value=feher> Fehér</option> 
+        <option value=kek> Kék</option>
+        <option value=yellow> Sárga</option>
+        <option value=green> Zöld</option>
+     </ons-select>
+
+
+  <!--select minta-->
+      <ons-select class="select" name="imgcolor" id="imgcolor" onchange="imgDiv()">
+     <div id="nemo">
+     </div>
+         <option value="minta1">Minta1</option>
+        <option value="minta2">Minta2</option>
+        <option value="minta3">Minta3</option>
+        <option value="minta4">Minta4</option>
+        <option value="minta5">Minta5</option>
+     </ons-select>
+
+
+
+      <ons-select class="select">
+         <option value="basic">Dekoráció</option>
+        <option value="1">Piros</option>
+        <option value="2">Kék</option>
+        <option value="3">Zöld</option>
+        <option value="4">Szürke</option>
+     </ons-select>
+
+      <ons-select class="select">
+         <option value="basic">Oldal elrendezés</option>
+        <option value="1">Piros</option>
+        <option value="2">Kék</option>
+        <option value="3">Zöld</option>
+        <option value="4">Szürke</option>
+     </ons-select>
+
+
+<!--3. fotókönyv 1.oldal////////////////////////////////////////////////////////////////////////////////-->
+  <ons-card>
+  <div class="book">
+         <div class="page" id="first">
+                  <input id="files" type="file" /> 
+                  <output id="result"/></output>
+          </div>         
+           <div class="page" id="second">
+                  <input id="kepek" type="file"/> 
+         </div>          
+                  <output id="eredmeny"/></output>
+          <ons-button type="button" id="clear" class=" ui-btn ui-shadow ui-corner-all">Clear</ons-button>
+  </div>        
+  </ons-card>
+  <!--3.oldal 1.oldal vége////////////////////////////////////////////////////////////////////////////////-->
+
+<!--select kezdete--> 
+<!--select színek-->
+     <ons-select class="select" name="bgcolor" id="bgcolor" onchange="colorDiv()">
+     <div id="demo">
+     </div>
+        <option value=szurke> Szürke</option>
+        <option value=feher> Fehér</option> 
+        <option value=kek> Kék</option>
+        <option value=yellow> Sárga</option>
+        <option value=green> Zöld</option>
+     </ons-select>
+
+
+  <!--select minta-->
+      <ons-select class="select" name="imgcolor" id="imgcolor" onchange="imgDiv()">
+     <div id="nemo">
+     </div>
+         <option value="minta1">Minta1</option>
+        <option value="minta2">Minta2</option>
+        <option value="minta3">Minta3</option>
+        <option value="minta4">Minta4</option>
+        <option value="minta5">Minta5</option>
+     </ons-select>
+
+
+
+      <ons-select class="select">
+         <option value="basic">Dekoráció</option>
+        <option value="1">Piros</option>
+        <option value="2">Kék</option>
+        <option value="3">Zöld</option>
+        <option value="4">Szürke</option>
+     </ons-select>
+
+      <ons-select class="select">
+         <option value="basic">Oldal elrendezés</option>
+        <option value="1">Piros</option>
+        <option value="2">Kék</option>
+        <option value="3">Zöld</option>
+        <option value="4">Szürke</option>
+     </ons-select>
+
+
+<!--3. fotókönyv 2. oldal////////////////////////////////////////////////////////////////////////////////-->
+<ons-card>
+  <div class="book">
+         <div class="page" id="first">
+                  <input id="files" type="file" /> 
+                  <output id="result"/></output>
+          </div>         
+           <div class="page" id="second">
+                  <input id="kepek" type="file"/> 
+         </div>          
+                  <output id="eredmeny"/></output>
+          <ons-button type="button" id="clear" class=" ui-btn ui-shadow ui-corner-all">Clear</ons-button>
+  </div>        
+  </ons-card>
+<!--3. fotókönyv 2. oldal vége////////////////////////////////////////////////////////////////////////////-->
+
+<!--select kezdete--> 
+<!--select színek-->
+     <ons-select class="select" name="bgcolor" id="bgcolor" onchange="colorDiv()">
+     <div id="demo">
+     </div>
+        <option value=szurke> Szürke</option>
+        <option value=feher> Fehér</option> 
+        <option value=kek> Kék</option>
+        <option value=yellow> Sárga</option>
+        <option value=green> Zöld</option>
+     </ons-select>
+
+
+  <!--select minta-->
+      <ons-select class="select" name="imgcolor" id="imgcolor" onchange="imgDiv()">
+     <div id="nemo">
+     </div>
+        <option value="minta1">Minta1</option>
+        <option value="minta2">Minta2</option>
+        <option value="minta3">Minta3</option>
+        <option value="minta4">Minta4</option>
+        <option value="minta5">Minta5</option>
+     </ons-select>
+
+
+
+
+      <ons-select class="select">
+         <option value="basic">Dekoráció</option>
+        <option value="1">Piros</option>
+        <option value="2">Kék</option>
+        <option value="3">Zöld</option>
+        <option value="4">Szürke</option>
+     </ons-select>
+
+      <ons-select class="select">
+         <option value="basic">Oldal elrendezés</option>
+        <option value="1">Piros</option>
+        <option value="2">Kék</option>
+        <option value="3">Zöld</option>
+        <option value="4">Szürke</option>
+     </ons-select>
+
+
+  <!--3. fotókönyv 3. oldal////////////////////////////////////////////////////////////////////////////////-->
+  <ons-card>
+  <div class="book">
+         <div class="page" id="first">
+                  <input id="files" type="file" /> 
+                  <output id="result"/></output>
+          </div>         
+           <div class="page" id="second">
+                  <input id="kepek" type="file"/> 
+         </div>          
+                  <output id="eredmeny"/></output>
+          <ons-button type="button" id="clear" class=" ui-btn ui-shadow ui-corner-all">Clear</ons-button>
+  </div>        
+  </ons-card>
+  <!--3. fotókönyv 3.oldal vége /////////////////////////////////////////////////////////////////////////-->
+  <ons-button onclick="fn.pushPage({'id': 'kispbfour.html', 'title': 'Kis Fotókönyv'})" class="next" style="height: 30px; text-align: right; margin-left: 5%;">Vissza
+</ons-button>
+<ons-button onclick="fn.pushPage({'id': 'kispbfour.html', 'title': 'Kis Fotókönyv'})" class="next" style="height: 30px; text-align: right; margin-left: 5%;">Következő
+</ons-button>
+
+  </ons-page>
+  </template>
+<!-- 3. fotókönyv vége ////////////////////////////////////////////////////////////////////////-->
+
+ <!--4.fotókönyv köv. oldal////////////////////////////////////////////////////////////////////////////// --> 
+<template id="kispbfour.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-back-button>Vissza</ons-back-button>
+      </div>
+      <div class="center"></div>    
+      <div class="right">
+      <ons-icon
+  icon="md-face"
+  size="20px">
+</ons-icon>
+</div>
+    </ons-toolbar>
+
+<!--select kezdete--> 
+<!--select színek-->
+     <ons-select class="select" name="bgcolor" id="bgcolor" onchange="colorDiv()">
+     <div id="demo">
+     </div>
+        <option value=szurke> Szürke</option>
+        <option value=feher> Fehér</option> 
+        <option value=kek> Kék</option>
+        <option value=yellow> Sárga</option>
+        <option value=green> Zöld</option>
+     </ons-select>
+
+
+  <!--select minta-->
+      <ons-select class="select" name="imgcolor" id="imgcolor" onchange="imgDiv()">
+     <div id="nemo">
+     </div>
+        <option value="minta1">Minta1</option>
+        <option value="minta2">Minta2</option>
+        <option value="minta3">Minta3</option>
+        <option value="minta4">Minta4</option>
+        <option value="minta5">Minta5</option>
+     </ons-select>
+
+
+
+
+      <ons-select class="select">
+         <option value="basic">Dekoráció</option>
+        <option value="1">Piros</option>
+        <option value="2">Kék</option>
+        <option value="3">Zöld</option>
+        <option value="4">Szürke</option>
+     </ons-select>
+
+      <ons-select class="select">
+         <option value="basic">Oldal elrendezés</option>
+        <option value="1">Piros</option>
+        <option value="2">Kék</option>
+        <option value="3">Zöld</option>
+        <option value="4">Szürke</option>
+     </ons-select>
+
+
+<!--1////////////////////////////////////////////////////////////////////////////////-->
+  <ons-card>
+  <div class="book">
+         <div class="page" id="first">
+                  <input id="files" type="file" /> 
+                  <output id="result"/></output>
+          </div>         
+           <div class="page" id="second">
+                  <input id="kepek" type="file"/> 
+         </div>          
+                  <output id="eredmeny"/></output>
+          <ons-button type="button" id="clear" class=" ui-btn ui-shadow ui-corner-all">Clear</ons-button>
+  </div>        
+  </ons-card>
+  <!--1 vége////////////////////////////////////////////////////////////////////////////////-->
+
+<!--select kezdete--> 
+<!--select színek-->
+     <ons-select class="select" name="bgcolor" id="bgcolor" onchange="colorDiv()">
+     <div id="demo">
+     </div>
+        <option value=szurke> Szürke</option>
+        <option value=feher> Fehér</option> 
+        <option value=kek> Kék</option>
+        <option value=yellow> Sárga</option>
+        <option value=green> Zöld</option>
+     </ons-select>
+
+
+  <!--select minta-->
+      <ons-select class="select" name="imgcolor" id="imgcolor" onchange="imgDiv()">
+     <div id="nemo">
+     </div>
+        <option value="minta1">Minta1</option>
+        <option value="minta2">Minta2</option>
+        <option value="minta3">Minta3</option>
+        <option value="minta4">Minta4</option>
+        <option value="minta5">Minta5</option>
+     </ons-select>
+
+
+
+      <ons-select class="select">
+         <option value="basic">Dekoráció</option>
+        <option value="1">Piros</option>
+        <option value="2">Kék</option>
+        <option value="3">Zöld</option>
+        <option value="4">Szürke</option>
+     </ons-select>
+
+      <ons-select class="select">
+         <option value="basic">Oldal elrendezés</option>
+        <option value="1">Piros</option>
+        <option value="2">Kék</option>
+        <option value="3">Zöld</option>
+        <option value="4">Szürke</option>
+     </ons-select>
+
+   
+
+<!--2////////////////////////////////////////////////////////////////////////////////-->
+<ons-card>
+  <div class="book">
+         <div class="page" id="first">
+                  <input id="files" type="file" /> 
+                  <output id="result"/></output>
+          </div>         
+           <div class="page" id="second">
+                  <input id="kepek" type="file"/> 
+         </div>          
+                  <output id="eredmeny"/></output>
+          <ons-button type="button" id="clear" class=" ui-btn ui-shadow ui-corner-all">Clear</ons-button>
+  </div>        
+  </ons-card>
+<!--2 vége////////////////////////////////////////////////////////////////////////////////-->
+  
+<ons-button onclick="fn.pushPage({'id': 'kispbfour.html', 'title': 'Kis Fotókönyv'})" class="next" style="height: 30px; text-align: right; margin-left: 5%;">Következő
+</ons-button>
+
+  </ons-page>
+  </template>
+<!-- 4. fotókönyv vége ////////////////////////////////////////////////////////////////////////-->
+
+
+
+<!--KÖZEPES FOTÓKÖNYV/////////////////////////////////////////////////////////-->
+  <template id="kozepespb.html">
+    <ons-page id="pageNav1">
+    <!--vissza a főoldalra-->
+      <ons-toolbar>
+        <div class="left">
+          <ons-back-button></ons-back-button>
+        </div>
+        <div class="center"></div>
+      </ons-toolbar>
+<!--vissza a főoldalra vége-->
+     
+     <div data-role="page" data-url="/D:/Mobil app/Onsen/OnsenProba/www/kozepespb.html" tabindex="0" class="ui-page ui-page-theme-a ui-page-active">
+  
+<!--select kezdete--> 
+<!--select színek-->
+     <ons-select class="select" name="bgcolor" id="bgcolor" onchange="colorDiv()">
+     <div id="demo">
+     </div>
+        <option value=szurke> Szürke</option>
+        <option value=feher> Fehér</option> 
+        <option value=kek> Kék</option>
+        <option value=yellow> Sárga</option>
+        <option value=green> Zöld</option>
+     </ons-select>
+
+
+  <!--select minta-->
+      <ons-select class="select" name="imgcolor" id="imgcolor" onchange="imgDiv()">
+     <div id="nemo">
+     </div>
+        <option value="minta1">Minta1</option>
+        <option value="minta2">Minta2</option>
+        <option value="minta3">Minta3</option>
+        <option value="minta4">Minta4</option>
+        <option value="minta5">Minta5</option>
+     </ons-select>
+
+
+
+
+      <ons-select class="select">
+         <option value="basic">Dekoráció</option>
+        <option value="1">Piros</option>
+        <option value="2">Kék</option>
+        <option value="3">Zöld</option>
+        <option value="4">Szürke</option>
+     </ons-select>
+
+      <ons-select class="select">
+         <option value="basic">Oldal elrendezés</option>
+        <option value="1">Piros</option>
+        <option value="2">Kék</option>
+        <option value="3">Zöld</option>
+        <option value="4">Szürke</option>
+     </ons-select>
+
+    
+
+
+<!--1.fotókönyv 1.oldal////////////////////////////////////////////////////////////////////////////////////-->
+  <ons-card>
+  <div class="book" id="change">
+         <div class="page" id="first">
+                  <input id="files" type="file" multiple="" /> 
+                  <output id="result"/></output>
+          </div>         
+           <div class="page" id="second">
+                  <input id="kepek" type="file"/> 
+         </div>          
+                  <output id="eredmeny"/></output>
+          <ons-button type="button" id="clear" class=" ui-btn ui-shadow ui-corner-all">Clear
+          </ons-button>
+
+</div>
+</ons-card>
+
+
+
+</body>
+</html>
+
