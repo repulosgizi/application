@@ -956,44 +956,7 @@ ons.ready(function() {
 
  
   <script type="text/javascript">
-  /*image rotate jquery*/
-    $(document).ready(function(imgRotate) {
-
-
-      var degrees = 0;
-      $('#imgRotation1').click(function rotateMe(e) {
-
-        degrees += 90;
-
-        //$('.img').addClass('rotated'); // for one time rotation
-
-        $('#img1').css({
-
-          'transform': 'rotate(' + degrees + 'deg)',
-          '-ms-transform': 'rotate(' + degrees + 'deg)',
-          '-moz-transform': 'rotate(' + degrees + 'deg)',
-          '-webkit-transform': 'rotate(' + degrees + 'deg)',
-          '-o-transform': 'rotate(' + degrees + 'deg)'
-        });
-  })
-
-        var degrees = 0;
-      $('#imgRotation2').click(function rotateMe(e) {
-
-        degrees += 90;
-        $('#img2').css({
-
-          'transform': 'rotate(' + degrees + 'deg)',
-          '-ms-transform': 'rotate(' + degrees + 'deg)',
-          '-moz-transform': 'rotate(' + degrees + 'deg)',
-          '-webkit-transform': 'rotate(' + degrees + 'deg)',
-          '-o-transform': 'rotate(' + degrees + 'deg)'
-        });
-
-      })
-    });
-
-  /*image rotate jquery end*/
+ 
 
  /*img upload*/
   function initImageUpload(box) {    
@@ -1138,25 +1101,23 @@ function initDropEffect(box){
  <ons-card>
   <div class="book">
         <div class="box">
-         <div class="js--image-preview"></div>
-         <div class="page upload-options" id="first">
-
-                  <label>
-                  <input type="file" class="image-upload" accept="image/*"/>
-                  </label>
-               
+         <div class="page upload-options" id="first" style="position: relative; width:100%; height: 100%; ">
+                  <div class="js--image-preview" id="img3">
+                  <input type="file" class="image-upload" accept="image/*" style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;"/>
           </div>
-          </div>     
-           <div class="box page upload-options" id="second">
-            <input type="file" class="image-upload" accept="image/*" /> 
-            <div class="js--image-preview"></div>
-            <label>
-                  
-                </label>
-         </div>   
+          </div>
+          </div> 
 
-       
-  </div>        
+           <div class="box page upload-options" id="second">
+           <div class="js--image-preview" id="img4">
+            <input type="file" class="image-upload" accept="image/*" style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;"/> 
+            </div>
+            
+         </div>   
+             
+  </div>
+    <button id="imgRotation3" onclick="imgRotate()">Forgasd</button>    
+    <button id="imgRotation4" onclick="imgRotate()">Forgasd</button>   
   </ons-card>
 
   <!--1.fotókönyv első oldal vége//////////////////////////////////////////////////////////////////////////-->
@@ -1224,18 +1185,26 @@ function initDropEffect(box){
 
 
 <!--2.fotókönyv 1.oldal////////////////////////////////////////////////////////////////////////////////-->
-  <ons-card>
+ <ons-card>
   <div class="book">
-         <div class="page" id="first">
-                  <input id="files" type="file" /> 
-                  <output id="result"/></output>
-          </div>         
-           <div class="page" id="second">
-                  <input id="kepek" type="file"/> 
-         </div>          
-                  <output id="eredmeny"/></output>
-          <ons-button type="button" id="clear" class=" ui-btn ui-shadow ui-corner-all">Clear</ons-button>
-  </div>        
+        <div class="box">
+         <div class="page upload-options" id="first" style="position: relative; width:100%; height: 100%; ">
+                  <div class="js--image-preview" id="img5">
+                  <input type="file" class="image-upload" accept="image/*" style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;"/>
+          </div>
+          </div>
+          </div> 
+
+           <div class="box page upload-options" id="second">
+           <div class="js--image-preview" id="img6">
+            <input type="file" class="image-upload" accept="image/*" style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;"/> 
+            </div>
+            
+         </div>   
+             
+  </div>
+    <button id="imgRotation5" onclick="imgRotate()">Forgasd</button>    
+    <button id="imgRotation6" onclick="imgRotate()">Forgasd</button>   
   </ons-card>
   <!--2.fotókönyv 1.oldal vége/////////////////////////////////////////////////////////////////////////-->
 
@@ -1286,16 +1255,24 @@ function initDropEffect(box){
 <!--2.fotókönyv 2.oldal////////////////////////////////////////////////////////////////////////////////-->
 <ons-card>
   <div class="book">
-         <div class="page" id="first">
-                  <input id="files" type="file" /> 
-                  <output id="result"/></output>
-          </div>         
-           <div class="page" id="second">
-                  <input id="kepek" type="file"/> 
-         </div>          
-                  <output id="eredmeny"/></output>
-          <ons-button type="button" id="clear" class=" ui-btn ui-shadow ui-corner-all">Clear</ons-button>
-  </div>        
+        <div class="box">
+         <div class="page upload-options" id="first" style="position: relative; width:100%; height: 100%; ">
+                  <div class="js--image-preview" id="img7">
+                  <input type="file" class="image-upload" accept="image/*" style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;"/>
+          </div>
+          </div>
+          </div> 
+
+           <div class="box page upload-options" id="second">
+           <div class="js--image-preview" id="img8">
+            <input type="file" class="image-upload" accept="image/*" style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;"/> 
+            </div>
+            
+         </div>   
+             
+  </div>
+    <button id="imgRotation7" onclick="imgRotate()">Forgasd</button>    
+    <button id="imgRotation8" onclick="imgRotate()">Forgasd</button>   
   </ons-card>
 <!--2.fotókönyv 2.oldal vége////////////////////////////////////////////////////////////////////////////////-->
 
@@ -1345,18 +1322,26 @@ function initDropEffect(box){
      
 
   <!--2.fotókönyv 3.oldal////////////////////////////////////////////////////////////////////////////////-->
-  <ons-card>
+<ons-card>
   <div class="book">
-         <div class="page" id="first">
-                  <input id="files" type="file" /> 
-                  <output id="result"/></output>
-          </div>         
-           <div class="page" id="second">
-                  <input id="kepek" type="file"/> 
-         </div>          
-                  <output id="eredmeny"/></output>
-          <ons-button type="button" id="clear" class=" ui-btn ui-shadow ui-corner-all">Clear</ons-button>
-  </div>        
+        <div class="box">
+         <div class="page upload-options" id="first" style="position: relative; width:100%; height: 100%; ">
+                  <div class="js--image-preview" id="img9">
+                  <input type="file" class="image-upload" accept="image/*" style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;"/>
+          </div>
+          </div>
+          </div> 
+
+           <div class="box page upload-options" id="second">
+           <div class="js--image-preview" id="img10">
+            <input type="file" class="image-upload" accept="image/*" style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;"/> 
+            </div>
+            
+         </div>   
+             
+  </div>
+    <button id="imgRotation9" onclick="imgRotate()">Forgasd</button>    
+    <button id="imgRotation10" onclick="imgRotate()">Forgasd</button>   
   </ons-card>
   <!--2.fotókönyv 3.oldal vége ///////////////////////////////////////////////////////////////////////////-->
   <ons-button onclick="fn.pushPage({'id': 'kispbthree.html', 'title': 'Kis Fotókönyv'})" class="next" style="height: 30px; text-align: right; margin-left: 5%;">Vissza
@@ -1425,16 +1410,24 @@ function initDropEffect(box){
 <!--3. fotókönyv 1.oldal////////////////////////////////////////////////////////////////////////////////-->
   <ons-card>
   <div class="book">
-         <div class="page" id="first">
-                  <input id="files" type="file" /> 
-                  <output id="result"/></output>
-          </div>         
-           <div class="page" id="second">
-                  <input id="kepek" type="file"/> 
-         </div>          
-                  <output id="eredmeny"/></output>
-          <ons-button type="button" id="clear" class=" ui-btn ui-shadow ui-corner-all">Clear</ons-button>
-  </div>        
+        <div class="box">
+         <div class="page upload-options" id="first" style="position: relative; width:100%; height: 100%; ">
+                  <div class="js--image-preview" id="img11">
+                  <input type="file" class="image-upload" accept="image/*" style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;"/>
+          </div>
+          </div>
+          </div> 
+
+           <div class="box page upload-options" id="second">
+           <div class="js--image-preview" id="img12">
+            <input type="file" class="image-upload" accept="image/*" style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;"/> 
+            </div>
+            
+         </div>   
+             
+  </div>
+    <button id="imgRotation11" onclick="imgRotate()">Forgasd</button>    
+    <button id="imgRotation12" onclick="imgRotate()">Forgasd</button>   
   </ons-card>
   <!--3.oldal 1.oldal vége////////////////////////////////////////////////////////////////////////////////-->
 
@@ -1484,16 +1477,24 @@ function initDropEffect(box){
 <!--3. fotókönyv 2. oldal////////////////////////////////////////////////////////////////////////////////-->
 <ons-card>
   <div class="book">
-         <div class="page" id="first">
-                  <input id="files" type="file" /> 
-                  <output id="result"/></output>
-          </div>         
-           <div class="page" id="second">
-                  <input id="kepek" type="file"/> 
-         </div>          
-                  <output id="eredmeny"/></output>
-          <ons-button type="button" id="clear" class=" ui-btn ui-shadow ui-corner-all">Clear</ons-button>
-  </div>        
+        <div class="box">
+         <div class="page upload-options" id="first" style="position: relative; width:100%; height: 100%; ">
+                  <div class="js--image-preview" id="img13">
+                  <input type="file" class="image-upload" accept="image/*" style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;"/>
+          </div>
+          </div>
+          </div> 
+
+           <div class="box page upload-options" id="second">
+           <div class="js--image-preview" id="img14">
+            <input type="file" class="image-upload" accept="image/*" style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;"/> 
+            </div>
+            
+         </div>   
+             
+  </div>
+    <button id="imgRotation13" onclick="imgRotate()">Forgasd</button>    
+    <button id="imgRotation14" onclick="imgRotate()">Forgasd</button>   
   </ons-card>
 <!--3. fotókönyv 2. oldal vége////////////////////////////////////////////////////////////////////////////-->
 

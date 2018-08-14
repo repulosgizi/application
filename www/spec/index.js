@@ -65,3 +65,35 @@ describe('app', function() {
         });
     });
 });
+
+
+ /*image rotate jquery*/
+    $(document).ready(function(imgRotate) {
+
+
+      var degrees = 0;
+      $('#imgRotation1'&'#imgRotation5').click(function rotateMe(e) {
+
+        degrees += 90;
+
+        //$('.img').addClass('rotated'); // for one time rotation
+
+        $('#img1'&'#img2'&'#img3'&'#img4'&'#img5'&'#img6'&'#img7'&'#img8'&'#img9'&'#img10'&'#img11'&'#img12'&'#img13'&'#img14'&'#img15').css({
+          'transform': 'rotate(' + degrees + 'deg)',
+          '-ms-transform': 'rotate(' + degrees + 'deg)',
+          '-moz-transform': 'rotate(' + degrees + 'deg)',
+          '-webkit-transform': 'rotate(' + degrees + 'deg)',
+          '-o-transform': 'rotate(' + degrees + 'deg)'
+        });
+  })
+
+       
+     
+
+
+
+
+
+    });
+
+  /*image rotate jquery end*/
