@@ -931,8 +931,8 @@ ons.ready(function() {
          <!-- <div class="js--image-preview"></div> -->
 
          <div class="page upload-options" id="first" style="position: relative; width:100%; height: 100%; ">
-                  <div class="js--image-preview img">
-                  <input type="file" class="image-upload img1" accept="image/*" style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;"/>
+                  <div class="js--image-preview" id="img1">
+                  <input type="file" class="image-upload" accept="image/*" style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;"/>
           </div>
           </div>
           </div> 
@@ -948,17 +948,39 @@ ons.ready(function() {
                   <!-- <output id="eredmeny"/></output> -->
        
   </div>
-    <button class="imgRotation1" onclick="imgRotate()">Forgasd</button>    
-    <button id="imgRotation2" onclick="imgRotate()">Forgasd</button>   
+    <button class="imgRotation1" onclick="imgRotate()"><i style="font-size:18px" class="fa">&#xf01e;</i></button>    
+
+     <button id="button">
+       1:1
+     </button>
+     <button id="button2">
+       2:1
+     </button>
+
+    <button id="imgRotation2" onclick="imgRotate()"><i style="font-size:18px" class="fa">&#xf01e;</i></button>   
   </ons-card>
 
  
 
  
   <script type="text/javascript">
-    
-    /*image rotate jquery */
-$(document).ready(function() {
+
+/*image resize*/
+  $('#button').click(function(){
+    $('#img1').animate({width:'80%', height: '80%'});
+    //this method increases the height to 72px
+});
+
+$('#button2').click(function(){
+    $('#img1').animate({height: '50%', width: '50%'});
+    //This method keeps increasing the height by 36px
+});
+
+/*image resize end*/
+
+/*image rotate jquery*/
+  
+   $(document).ready(function() {
 
 
   var degrees = 0;
@@ -968,7 +990,7 @@ $(document).ready(function() {
 
     //$('.img').addClass('rotated'); // for one time rotation
 
-    $('.img').css({
+    $('#img1').css({
 
       'transform': 'rotate(' + degrees + 'deg)',
       '-ms-transform': 'rotate(' + degrees + 'deg)',
@@ -981,6 +1003,7 @@ $(document).ready(function() {
 });
 
   /*image rotate jquery end*/
+
 
  /*img upload*/
   function initImageUpload(box) {    
