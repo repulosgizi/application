@@ -380,7 +380,7 @@
     var div = document.getElementById('change');
     div.style.backgroundColor = '#e4e8c';
 
-    document.getElementById("demo").innerHTML = selection;
+  /*  document.getElementById("demo").innerHTML = selection;*/
 
     switch (selection) {
         case "#e4e8cf":
@@ -928,7 +928,7 @@ ons.ready(function() {
 
 <!--1. fotókönyv 2.oldal//////////////////////////////////////////////////////////////////////////////////-->
 <ons-card>
-  <div class="book">
+  <div class="book" id="change">
         <div class="box">
          <!-- <div class="js--image-preview"></div> -->
 
@@ -974,7 +974,7 @@ ons.ready(function() {
 });
 
 $('#button2').click(function(){
-    $('#img1').animate({height: '40%', width: '40%', margin: '5% 5% 5% 5%'});
+    $('#img1').animate({height: '40%', width: '88%', margin: '5% 5% 5% 5%'});
     //This method keeps increasing the height by 36px
 });
 
@@ -1105,7 +1105,7 @@ function initDropEffect(box){
 
 <!--select színek-->
      <ons-select class="select" name="bgcolor" id="bgcolor" onchange="colorDiv()">
-     <div id="demo">
+     <div>
      </div>
         <option value=szurke> Szürke</option>
         <option value=feher> Fehér</option> 
@@ -1192,7 +1192,7 @@ function initDropEffect(box){
 <!--select kezdete--> 
 <!--select színek-->
      <ons-select class="select" name="bgcolor" id="bgcolor" onchange="colorDiv()">
-     <div id="demo">
+     <div>
      </div>
         <option value=szurke> Szürke</option>
         <option value=feher> Fehér</option> 
