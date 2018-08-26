@@ -272,15 +272,13 @@
 </div>
 </ons-card>
 
-<script type="text/javascript">
- 
-</script>
 
           <!--select színek-->
      <ons-select class="select" name="bgcolor" id="bgcolor" onchange="colorDiv()">
      <div id="demo">
      </div>
-     
+        
+        <option value="transparent" data-content="<div class='editoption' style='background-color:transparent'></div>">Select color</option>
         <option value="#e4e8cf" data-content="<div class='editoption' style='background-color:#e4e8cf'></div>">willow brook</option>
         <option value="#e9e6ce" data-content="<div class='editoption' style='background-color:#e9e6ce'></div>">orange white</option>
         <option value="#e9e1ce" data-content="<div class='editoption' style='background-color:#e9e1ce'></div>">Quarter Spanish White</option>
@@ -927,6 +925,7 @@ ons.ready(function() {
   
 
 <!--1. fotókönyv 2.oldal//////////////////////////////////////////////////////////////////////////////////-->
+<div class="ons-card-div">
 <ons-card>
   <div class="book" id="change">
         <div class="box">
@@ -953,15 +952,15 @@ ons.ready(function() {
     <button class="imgRotation1" onclick="imgRotate()"><i style="font-size:18px" class="fa">&#xf01e;</i></button>    
 
      <button id="button">
-       1:1
+       <img class="elrendezes_icon" src="../www/img/elrendezes_1.jpg" alt="elrendezes_1">
      </button>
      <button id="button2">
-       2:1
+       <img class="elrendezes_icon" src="../www/img/elrendezes_2.jpg" alt="elrendezes_2">
      </button>
 
     <button id="imgRotation2" onclick="imgRotate()"><i style="font-size:18px" class="fa">&#xf01e;</i></button>   
   </ons-card>
-
+</div>
  
 
  

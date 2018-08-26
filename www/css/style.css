@@ -189,7 +189,10 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-
+.elrendezes_icon {
+   width: 1,5em;
+    height: 1em;
+}
 /*fotókönyv oldal szerkesztés vége*/
 
 /*képfeltöltés*/
@@ -405,6 +408,11 @@ ons-splitter-side[animation=overlay] {
   background-color: #eee;
 }        
 
+.ons-card-div {
+  height: 150% !important;
+  background-color: white;
+}
+
 /*select*/
 
 .select {
@@ -415,6 +423,8 @@ select option {
     color: #fff;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
+
+
 /*szín*/
 select option[value="#e4e8cf"] { /* value not val */
     background: #e4e8cf;
@@ -783,5 +793,10 @@ select option[value="minta5"] { /* value not val */
      overflow:hidden;
      float: left;
  }
+
+
+
+
+
 
 
