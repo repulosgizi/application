@@ -957,6 +957,9 @@ ons.ready(function() {
      <button id="button2">
        <img class="elrendezes_icon" src="../www/img/elrendezes_2.jpg" alt="elrendezes_2">
      </button>
+     <button id="button3">
+       <img class="elrendezes_icon" src="../www/img/elrendezes_3.jpg" alt="elrendezes_3">
+     </button>
 
     <button id="imgRotation2" onclick="imgRotate()"><i style="font-size:18px" class="fa">&#xf01e;</i></button>   
   </ons-card>
@@ -977,6 +980,10 @@ $('#button2').click(function(){
     //This method keeps increasing the height by 36px
 });
 
+$('#button3').click(function(){
+    $('#img1').animate({height: '88%', width: '40%', margin: '5% 5% 5% 5%'});
+    //This method keeps increasing the height by 36px
+});
 /*image resize end*/
 
 /*image rotate jquery*/
@@ -1169,7 +1176,7 @@ function initDropEffect(box){
   </ons-card>
 
   <!--1.fotókönyv első oldal vége//////////////////////////////////////////////////////////////////////////-->
-    <ons-button onclick="fn.pushPage({'id': 'kispbtwo.html', 'title': 'Kis Fotókönyv'})" id="next" style="height: 30px; text-align: right; margin-left: 5%;">
+    <ons-button onclick="fn.pushPage({'id': 'kispbtwo.html', 'title': 'Kis Fotókönyv'})" class="next" style="height: 30px; text-align: right; margin-left: 5%;">
      Vissza
       </ons-button>
 
