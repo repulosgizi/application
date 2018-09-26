@@ -1,0 +1,242 @@
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#E4E4E4;
+    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #A7A7A7),
+        color-stop(0.51, #E4E4E4)
+    );
+    background-attachment:fixed;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+
+/* Portrait layout (default) */
+.app {
+    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+    position:absolute;             /* position in the center of the screen */
+    left:50%;
+    top:50%;
+    height:50px;                   /* text area height */
+    width:225px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+
+/*fotókönyv oldal szerkesztés*/
+body {
+  background: #f2f2f2;
+  
+  }
+  
+.book {
+  position: relative;
+  margin: auto;
+  width: 400px;
+  height: 300px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
+  width: 280px; 
+  height: 110px;
+}
+.book .page {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background: #fff;
+}
+.book #first {
+  left: 0;
+  box-shadow: inset -25px 0 70px -35px rgba(0, 0, 0, 0.3)
+}
+.book #first:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 0%;
+  height: 5%;
+  width: 60%;
+  border-radius: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+.book #second {
+  right: 0;
+  left: 50%;
+  box-shadow: inset 25px 0 40px -20px rgba(0, 0, 0, 0.2);
+  
+}
+.book #second:before {
+  content: "";
+  position: relative;
+  z-index: -1;
+  left: 50%;
+  bottom: 0%;
+  height: 5%;
+  width: 100%;
+  border-radius: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+#files {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 10%;
+  width: 110px;
+}
+
+#kepek {
+    margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 10%;
+  width: 110px;
+}
+/*fotókönyv oldal szerkesztés vége*/
+
+/*képfeltöltés*/
+
+      body{
+font-family: ‘Segoe UI’;
+font-size: 12pt;
+}
+
+header h1{
+font-size:12pt;
+color: #fff;
+background-color: #1BA1E2;
+padding: 20px;
+
+}
+article
+{
+width: 100%;
+margin:auto;
+margin-top:10px;
+}
+
+.thumbnail{
+
+height: 95px;
+width: 130px;
+margin-top: 5%;
+margin-left: 2%;
+margin-right: 2%;
+border: 1px solid black;
+
+}
+#clear{
+display:none;
+}
+
+
+#result {
+
+}
+/*képfeltöltés vége*/
+
+ons-splitter-side[animation=overlay] {
+    border-left: 1px solid #bbb;
+  }
+
+  /*forms*/
+
+     .right-icon {
+          margin-left: 10px;
+        }
+
+        .right-label {
+          color: #666;
+        }
+
+/*sidemenu*/
+
+ .profile-pic {
+          width: 200px;
+          background-color: #fff;
+          margin: 20px auto 10px;
+          border: 1px solid #999;
+          border-radius: 4px;
+        }
+
+        .profile-pic > img {
+          display: block;
+          max-width: 100%;
+        }
+
+        ons-list-item {
+          color: #444;
+        }

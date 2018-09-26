@@ -949,6 +949,8 @@ ons.ready(function() {
                   <!-- <output id="eredmeny"/></output> -->
        
   </div>
+
+
     <button class="imgRotation1" onclick="imgRotate()"><i style="font-size:18px" class="fa">&#xf01e;</i></button>    
 
      <button id="button">
@@ -961,7 +963,16 @@ ons.ready(function() {
        <img class="elrendezes_icon" src="../www/img/elrendezes_3.jpg" alt="elrendezes_3">
      </button>
 
-    <button id="imgRotation2" onclick="imgRotate()"><i style="font-size:18px" class="fa">&#xf01e;</i></button>   
+    <button class="imgRotation2" onclick="imgRotate()"><i style="font-size:18px" class="fa">&#xf01e;</i></button> 
+     <button id="button4">
+       <img class="elrendezes_icon" src="../www/img/elrendezes_1.jpg" alt="elrendezes_1">
+     </button>
+     <button id="button5">
+       <img class="elrendezes_icon" src="../www/img/elrendezes_2.jpg" alt="elrendezes_2">
+     </button>
+     <button id="button6">
+       <img class="elrendezes_icon" src="../www/img/elrendezes_3.jpg" alt="elrendezes_3">
+     </button>
   </ons-card>
 </div>
  
@@ -984,6 +995,11 @@ $('#button3').click(function(){
     $('#img1').animate({height: '88%', width: '40%', margin: '5% 5% 5% 5%'});
     //This method keeps increasing the height by 36px
 });
+
+$('#button4').click(function(){
+    $('#img2').animate({height: '88%', width: '40%', margin: '5% 5% 5% 5%'});
+    //This method keeps increasing the height by 36px
+});
 /*image resize end*/
 
 /*image rotate jquery*/
@@ -999,6 +1015,29 @@ $('#button3').click(function(){
     //$('.img').addClass('rotated'); // for one time rotation
 
     $('#img1').css({
+
+      'transform': 'rotate(' + degrees + 'deg)',
+      '-ms-transform': 'rotate(' + degrees + 'deg)',
+      '-moz-transform': 'rotate(' + degrees + 'deg)',
+      '-webkit-transform': 'rotate(' + degrees + 'deg)',
+      '-o-transform': 'rotate(' + degrees + 'deg)'
+    });
+
+  })
+});
+
+
+   $(document).ready(function() {
+
+
+  var degrees = 0;
+  $('.imgRotation2').click(function rotateMe(e) {
+
+    degrees += 90;
+
+    //$('.img').addClass('rotated'); // for one time rotation
+
+    $('#img2').css({
 
       'transform': 'rotate(' + degrees + 'deg)',
       '-ms-transform': 'rotate(' + degrees + 'deg)',
