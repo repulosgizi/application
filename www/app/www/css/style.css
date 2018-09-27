@@ -193,6 +193,13 @@ body {
    width: 1,5em;
     height: 1em;
 }
+
+.buttons_div {
+    float: left;
+    margin-top: 40px;
+    width: 50%;
+    background: green;
+}
 /*fotókönyv oldal szerkesztés vége*/
 
 /*képfeltöltés*/

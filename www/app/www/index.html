@@ -950,7 +950,7 @@ ons.ready(function() {
        
   </div>
 
-
+<div class="buttons_div">
     <button class="imgRotation1" onclick="imgRotate()"><i style="font-size:18px" class="fa">&#xf01e;</i></button>    
 
      <button id="button">
@@ -962,7 +962,9 @@ ons.ready(function() {
      <button id="button3">
        <img class="elrendezes_icon" src="../www/img/elrendezes_3.jpg" alt="elrendezes_3">
      </button>
+</div>
 
+<div class="button_div">
     <button class="imgRotation2" onclick="imgRotate()"><i style="font-size:18px" class="fa">&#xf01e;</i></button> 
      <button id="button4">
        <img class="elrendezes_icon" src="../www/img/elrendezes_1.jpg" alt="elrendezes_1">
@@ -973,6 +975,8 @@ ons.ready(function() {
      <button id="button6">
        <img class="elrendezes_icon" src="../www/img/elrendezes_3.jpg" alt="elrendezes_3">
      </button>
+
+ </div>    
   </ons-card>
 </div>
  
@@ -997,7 +1001,17 @@ $('#button3').click(function(){
 });
 
 $('#button4').click(function(){
+    $('#img2').animate({height: '88%', width: '88%', margin: '5% 5% 5% 5%'});
+    //This method keeps increasing the height by 36px
+});
+
+$('#button5').click(function(){
     $('#img2').animate({height: '88%', width: '40%', margin: '5% 5% 5% 5%'});
+    //This method keeps increasing the height by 36px
+});
+
+$('#button6').click(function(){
+    $('#img2').animate({height: '40%', width: '88%', margin: '5% 5% 5% 5%'});
     //This method keeps increasing the height by 36px
 });
 /*image resize end*/
