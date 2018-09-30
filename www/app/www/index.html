@@ -22,14 +22,14 @@
   <script src="../www/js/index.js"></script>
 
   <script type="text/javascript">
-       ons.getScriptPage().addEventListener('prechange', function(event) {
+     /*  ons.getScriptPage().addEventListener('prechange', function(event) {
         if (event.target.matches('#appTabbar')) {
           event.currentTarget.querySelector('ons-toolbar .center').innerHTML = event.tabItem.getAttribute('label');
         }
       });
 /**/
 
- $('.OpenImgUpload').click(function(){ $('.imgupload').trigger('click'); });
+/* $('.OpenImgUpload').click(function(){ $('.imgupload').trigger('click'); });*/
 
  /**/
 
@@ -272,7 +272,22 @@
 </div>
 </ons-card>
 
+<ons-row class="buttons_div_first">
+    <button class="imgRotation2" onclick="imgRotate()"><i style="font-size:18px" class="fa">&#xf01e;</i></button> 
+     <button id="button001">
+       <img class="elrendezes_icon" src="../www/img/elrendezes_1.jpg" alt="elrendezes_1">
+     </button>
+     <button id="button002">
+       <img class="elrendezes_icon" src="../www/img/elrendezes_2.jpg" alt="elrendezes_2">
+     </button>
+     <button id="button003">
+       <img class="elrendezes_icon" src="../www/img/elrendezes_3.jpg" alt="elrendezes_3">
+     </button>
 
+ </ons-row>    
+
+
+<ons-row class="buttons_selects_first">
           <!--select színek-->
      <ons-select class="select" name="bgcolor" id="bgcolor" onchange="colorDiv()">
      <div id="demo">
@@ -371,6 +386,220 @@
 
      </ons-select>
 
+
+<!--select minta-->
+      <ons-select class="select" name="imgcolor" id="imgcolor" onchange="imgDiv()">
+     <div id="nemo">
+     </div>
+        <option value="blank" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_blank_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_blank_tn.1080.jpg">blank</option>
+          <option value="valentine_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_1_tn.1080.jpg">&nbsp;</option>
+          <option value="valentine_2" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_2_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_2_tn.1080.jpg">&nbsp;</option>
+          <option value="valentine_3" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_3_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_3_tn.1080.jpg">&nbsp;</option>
+          <option value="valentine_4" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_4_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_4_tn.1080.jpg">&nbsp;</option>
+          <option value="valentine_5" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_5_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_5_tn.1080.jpg">&nbsp;</option>
+          <option value="valentine_6" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_6_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_6_tn.1080.jpg">&nbsp;</option>
+          <option value="valentine_7" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_7_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_7_tn.1080.jpg">&nbsp;</option>
+          <option value="karneval_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_1_tn.1080.jpg">&nbsp;</option>
+          <option value="karneval_2" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_2_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_2_tn.1080.jpg">&nbsp;</option>
+          <option value="karneval_3" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_3_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_3_tn.1080.jpg">&nbsp;</option>
+          <option value="karneval_4" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_4_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_4_tn.1080.jpg">&nbsp;</option>
+          <option value="karneval_5" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_5_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_5_tn.1080.jpg">&nbsp;</option>
+          <option value="karneval_6" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_6_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_6_tn.1080.jpg">&nbsp;</option>
+          <option value="karneval_7" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_7_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_7_tn.1080.jpg">&nbsp;</option>
+          <option value="karneval_8" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_8_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_8_tn.1080.jpg">&nbsp;</option>
+          <option value="argyle_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_argyle_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_argyle_1_tn.1080.jpg">&nbsp;</option>
+          <option value="argyle_2" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_argyle_2_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_argyle_2_tn.1080.jpg">&nbsp;</option>
+          <option value="argyle_3" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_argyle_3_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_argyle_3_tn.1080.jpg">&nbsp;</option>
+          <option value="argyle_4" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_argyle_4_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_argyle_4_tn.1080.jpg">&nbsp;</option>
+          <option value="rozsak_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_rozsak_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_rozsak_1_tn.1080.jpg">&nbsp;</option>
+          <option value="tulipanok_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_tulipanok_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_tulipanok_1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="esernyok_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_esernyok_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_esernyok_1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="fuszalak_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_fuszalak_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_fuszalak_1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="baby_girl_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_baby_girl_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_baby_girl_1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="baby_boy_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_baby_boy_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_baby_boy_1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="baby_green_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_baby_green_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_baby_green_1_tn.1080.jpg">&nbnbsp;</option>
+                                          <option value="viragok_mehecske1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_viragok_mehecske1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_viragok_mehecske1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="ceruzak_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_ceruzak_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_ceruzak_1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="babakocsi_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_babakocsi_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_babakocsi_1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="babarucik_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_babarucik_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_babarucik_1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="kis_golyak_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_kis_golyak_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_kis_golyak_1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="jatekok_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_jatekok_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_jatekok_1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="kis_pottyos_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_kis_pottyos_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_kis_pottyos_1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="nagy_golyak_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_nagy_golyak_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_nagy_golyak_1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="nagy_pottyos_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_nagy_pottyos_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_nagy_pottyos_1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="405449" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_405449_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_405449_tn.1080.jpg">&nbsp;</option>
+                                          <option value="201159" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_201159_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_201159_tn.1080.jpg">&nbsp;</option>
+                                          <option value="434269" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_434269_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_434269_tn.1080.jpg">&nbsp;</option>
+                                          <option value="821391" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_821391_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_821391_tn.1080.jpg">&nbsp;</option>
+                                          <option value="021464" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_021464_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_021464_tn.1080.jpg">&nbsp;</option>
+                                          <option value="112999" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_112999_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_112999_tn.1080.jpg">&nbsp;</option>
+                                          <option value="580793" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_580793_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_580793_tn.1080.jpg">&nbsp;</option>
+                                          <option value="198428" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_198428_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_198428_tn.1080.jpg">&nbsp;</option>
+                                          <option value="841291" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_841291_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_841291_tn.1080.jpg">&nbsp;</option>
+                                          <option value="223442" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_223442_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_223442_tn.1080.jpg">&nbsp;</option>
+                                          <option value="506133" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_506133_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_506133_tn.1080.jpg">&nbsp;</option>
+                                          <option value="694311" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_694311_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_694311_tn.1080.jpg">&nbsp;</option>
+                                          <option value="392388" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_392388_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_392388_tn.1080.jpg">&nbsp;</option>
+                                          <option value="900630" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_900630_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_900630_tn.1080.jpg">&nbsp;</option>
+                                          <option value="pottyos" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_pottyos_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_pottyos_tn.1080.jpg">&nbsp;</option>
+                                          <option value="cikkcakk" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_cikkcakk_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_cikkcakk_tn.1080.jpg">&nbsp;</option>
+                                          <option value="hullamok" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_hullamok_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_hullamok_tn.1080.jpg">&nbsp;</option>
+                                          <option value="abrosz" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_abrosz_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_abrosz_tn.1080.jpg">&nbsp;</option>
+                                          <option value="ornament" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_ornament_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_ornament_tn.1080.jpg">&nbsp;</option>
+                                          <option value="gotikus2" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_gotikus2_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_gotikus2_tn.1080.jpg">&nbsp;</option>
+                                          <option value="viragok" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_viragok_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_viragok_tn.1080.jpg">&nbsp;</option>
+                                          <option value="levelek" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_levelek_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_levelek_tn.1080.jpg">&nbsp;</option>
+                                          <option value="indas" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_indas_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_indas_tn.1080.jpg">&nbsp;</option>
+                                          <option value="baglyok" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_baglyok_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_baglyok_tn.1080.jpg">&nbsp;</option>
+                                          <option value="hopihe" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_hopihe_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_hopihe_tn.1080.jpg">&nbsp;</option>
+                                          <option value="pitypang" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_pitypang_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_pitypang_tn.1080.jpg">&nbsp;</option>
+                                          <option value="hoeses" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_hoeses_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_hoeses_tn.1080.jpg">&nbsp;</option>
+                                          <option value="vilagterkep" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_vilagterkep_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_vilagterkep_tn.1080.jpg">&nbsp;</option>
+                                          <option value="faminta" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_faminta_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_faminta_tn.1080.jpg">&nbsp;</option>
+                                          <option value="kopott" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_kopott_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_kopott_tn.1080.jpg">&nbsp;</option>
+                                          <option value="ferdeabrosz" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_ferdeabrosz_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_ferdeabrosz_tn.1080.jpg">&nbsp;</option>
+                                          <option value="nagyiv" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_nagyiv_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_nagyiv_tn.1080.jpg">&nbsp;</option>
+                                          <option value="konyvcsik1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_konyvcsik1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_konyvcsik1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="minta1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_minta1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_minta1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="hopiheslogos" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_hopiheslogos_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_hopiheslogos_tn.1080.jpg">&nbsp;</option>
+                                          <option value="csikoscsillagos" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_csikoscsillagos_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_csikoscsillagos_tn.1080.jpg">&nbsp;</option>
+                                          <option value="pottyoskekszalagos" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_pottyoskekszalagos_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_pottyoskekszalagos_tn.1080.jpg">&nbsp;</option>
+                                          <option value="csikospottyos" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_csikospottyos_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_csikospottyos_tn.1080.jpg">&nbsp;</option>
+                                          <option value="rozsas2" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_rozsas2_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_rozsas2_tn.1080.jpg">&nbsp;</option>
+                                          <option value="rozsas1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_rozsas1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_rozsas1_tn.1080.jpg">&nbsp;</option>
+                                          <option value="hatterlevelek" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_hatterlevelek_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_hatterlevelek_tn.1080.jpg">&nbsp;</option>
+                                          <option value="karacsonyfull" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_karacsonyfull_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_karacsonyfull_tn.1080.jpg">&nbsp;</option>
+                                          <option value="kovirag" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_kovirag_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_kovirag_tn.1080.jpg">&nbsp;</option>
+                                          <option value="kovirag2" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_kovirag2_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_kovirag2_tn.1080.jpg">&nbsp;</option>
+                                          <option value="cikkcakkpotty" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_cikkcakkpotty_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_cikkcakkpotty_tn.1080.jpg">&nbsp;</option>
+                                          <option value="barnakacskaringos" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_barnakacskaringos_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_barnakacskaringos_tn.1080.jpg">&nbsp;</option>
+                                          <option value="viragostapeta" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_viragostapeta_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_viragostapeta_tn.1080.jpg">&nbsp;</option>
+                                          <option value="foltos" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_foltos_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_foltos_tn.1080.jpg">&nbsp;</option>
+                                          <option value="regipapir" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_regipapir_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_regipapir_tn.1080.jpg">&nbsp;</option>
+                                          <option value="foszlotapeta" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_foszlotapeta_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_foszlotapeta_tn.1080.jpg">&nbsp;</option>
+                                          <option value="kopas" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_kopas_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_kopas_tn.1080.jpg">&nbsp;</option>
+                                          <option value="mozgasb" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_mozgasb_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_mozgasb_tn.1080.jpg">&nbsp;</option>
+                                          <option value="mozgaskek" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_mozgaskek_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_mozgaskek_tn.1080.jpg">&nbsp;</option>
+                                          <option value="mozgasvirag" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_mozgasvirag_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_mozgasvirag_tn.1080.jpg">&nbsp;</option>
+                                          <option value="indas2" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_indas2_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_indas2_tn.1080.jpg">&nbsp;</option>
+                                          <option value="zoldbarokk" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_zoldbarokk_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_zoldbarokk_tn.1080.jpg">&nbsp;</option>
+                                          <option value="vizjeles" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_vizjeles_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_vizjeles_tn.1080.jpg">&nbsp;</option>
+                                          <option value="761625" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_761625_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_761625_tn.1080.jpg">&nbsp;</option>
+                                          <option value="874320" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_874320_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_874320_tn.1080.jpg">&nbsp;</option>
+                                          <option value="707180" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_707180_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_707180_tn.1080.jpg">&nbsp;</option>
+                                          <option value="387819" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_387819_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_387819_tn.1080.jpg">&nbsp;</option>
+                                          <option value="106535" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_106535_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_106535_tn.1080.jpg">&nbsp;</option>
+                                          <option value="246469" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_246469_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_246469_tn.1080.jpg">&nbsp;</option>
+                                          <option value="284205" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_284205_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_284205_tn.1080.jpg">&nbsp;</option>
+                                          <option value="000670" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_000670_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_000670_tn.1080.jpg">&nbsp;</option>
+                                          <option value="599591" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_599591_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_599591_tn.1080.jpg">&nbsp;</option>
+                                          <option value="870745" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_870745_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_870745_tn.1080.jpg">&nbsp;</option>
+                                          <option value="588788" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_588788_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_588788_tn.1080.jpg">&nbsp;</option>
+                                          <option value="523583" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_523583_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_523583_tn.1080.jpg">&nbsp;</option>
+                                          <option value="590483" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_590483_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_590483_tn.1080.jpg">&nbsp;</option>
+                                          <option value="476767" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_476767_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_476767_tn.1080.jpg">&nbsp;</option>
+                                          <option value="761187" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_761187_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_761187_tn.1080.jpg">&nbsp;</option>
+                                          <option value="410920" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_410920_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_410920_tn.1080.jpg">&nbsp;</option>
+                                          <option value="187397" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_187397_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_187397_tn.1080.jpg">&nbsp;</option>
+                                          <option value="026569" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_026569_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_026569_tn.1080.jpg">&nbsp;</option>
+                                          <option value="899681" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_899681_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_899681_tn.1080.jpg">&nbsp;</option>
+                                          <option value="973915" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_973915_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_973915_tn.1080.jpg">&nbsp;</option>
+                                          <option value="500451" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_500451_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_500451_tn.1080.jpg">&nbsp;</option>
+                                          <option value="557918" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_557918_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_557918_tn.1080.jpg">&nbsp;</option>
+                                          <option value="608952" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_608952_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_608952_tn.1080.jpg">&nbsp;</option>
+                                          <option value="353693" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_353693_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_353693_tn.1080.jpg">&nbsp;</option>
+                                          <option value="811017" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_811017_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_811017_tn.1080.jpg">&nbsp;</option>
+                                          <option value="313445" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_313445_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_313445_tn.1080.jpg">&nbsp;</option>
+                                          <option value="883860" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_883860_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_883860_tn.1080.jpg">&nbsp;</option>
+                                          <option value="733919" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_733919_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_733919_tn.1080.jpg">&nbsp;</option>
+                                          <option value="544744" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_544744_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_544744_tn.1080.jpg">&nbsp;</option>
+                                          <option value="031654" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_031654_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_031654_tn.1080.jpg">&nbsp;</option>
+                                          <option value="194108" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_194108_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_194108_tn.1080.jpg">&nbsp;</option>
+                                          <option value="545352" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_545352_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_545352_tn.1080.jpg">&nbsp;</option>
+                                          <option value="428211" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_428211_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_428211_tn.1080.jpg">&nbsp;</option>
+                                          <option value="927720" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_927720_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_927720_tn.1080.jpg">&nbsp;</option>
+                                          <option value="036426" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_036426_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_036426_tn.1080.jpg">&nbsp;</option>
+                                          <option value="160236" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_160236_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_160236_tn.1080.jpg">&nbsp;</option>
+                                          <option value="018726" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_018726_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_018726_tn.1080.jpg">&nbsp;</option>
+                                          <option value="210926" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_210926_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_210926_tn.1080.jpg">&nbsp;</option>
+                                          <option value="814244" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_814244_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_814244_tn.1080.jpg">&nbsp;</option>
+                                          <option value="074131" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_074131_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_074131_tn.1080.jpg">&nbsp;</option>
+                                          <option value="053010" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_053010_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_053010_tn.1080.jpg">&nbsp;</option>
+                                          <option value="989878" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_989878_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_989878_tn.1080.jpg">&nbsp;</option>
+                                          <option value="647660" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_647660_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_647660_tn.1080.jpg">&nbsp;</option>
+                                          <option value="881609" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_881609_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_881609_tn.1080.jpg">&nbsp;</option>
+                                          <option value="908809" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_908809_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_908809_tn.1080.jpg">&nbsp;</option>
+                                          <option value="788999" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_788999_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_788999_tn.1080.jpg">&nbsp;</option>
+                                          <option value="498067" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_498067_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_498067_tn.1080.jpg">&nbsp;</option>
+                                          <option value="977889" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_977889_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_977889_tn.1080.jpg">&nbsp;</option>
+                                          <option value="406437" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_406437_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_406437_tn.1080.jpg">&nbsp;</option>
+                                          <option value="815048" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_815048_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_815048_tn.1080.jpg">&nbsp;</option>
+                                          <option value="609782" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_609782_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_609782_tn.1080.jpg">&nbsp;</option>
+                                          <option value="017640" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_017640_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_017640_tn.1080.jpg">&nbsp;</option>
+                                          <option value="426817" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_426817_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_426817_tn.1080.jpg">&nbsp;</option>
+                                          <option value="504235" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_504235_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_504235_tn.1080.jpg">&nbsp;</option>
+                                          <option value="803987" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_803987_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_803987_tn.1080.jpg">&nbsp;</option>
+                                          <option value="335558" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_335558_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_335558_tn.1080.jpg">&nbsp;</option>
+                                          <option value="065854" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_065854_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_065854_tn.1080.jpg">&nbsp;</option>
+                                          <option value="747992" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_747992_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_747992_tn.1080.jpg">&nbsp;</option>
+                                          <option value="695426" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_695426_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_695426_tn.1080.jpg">&nbsp;</option>
+                                          <option value="251882" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_251882_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_251882_tn.1080.jpg">&nbsp;</option>
+                                          <option value="528049" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_528049_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_528049_tn.1080.jpg">&nbsp;</option>
+                                          <option value="743076" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_743076_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_743076_tn.1080.jpg">&nbsp;</option>
+                                          <option value="150986" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_150986_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_150986_tn.1080.jpg">&nbsp;</option>
+                                          <option value="366980" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_366980_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_366980_tn.1080.jpg">&nbsp;</option>
+                                          <option value="571910" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_571910_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_571910_tn.1080.jpg">&nbsp;</option>
+                                          <option value="007918" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_007918_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_007918_tn.1080.jpg">&nbsp;</option>
+                                          <option value="580233" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_580233_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_580233_tn.1080.jpg">&nbsp;</option>
+                                          <option value="804596" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_804596_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_804596_tn.1080.jpg">&nbsp;</option>
+                                          <option value="081667" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_081667_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_081667_tn.1080.jpg">&nbsp;</option>
+                                          <option value="026681" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_026681_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_026681_tn.1080.jpg">&nbsp;</option>
+                                          <option value="073202" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_073202_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_073202_tn.1080.jpg">&nbsp;</option>
+                                          <option value="285459" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_285459_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_285459_tn.1080.jpg">&nbsp;</option>
+                                          <option value="316945" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_316945_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_316945_tn.1080.jpg">&nbsp;</option>
+                                          <option value="391021" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_391021_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_391021_tn.1080.jpg">&nbsp;</option>
+                                          <option value="706273" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_706273_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_706273_tn.1080.jpg">&nbsp;</option>
+                                          <option value="410173" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_410173_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_410173_tn.1080.jpg">&nbsp;</option>
+                                          <option value="622969" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_622969_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_622969_tn.1080.jpg">&nbsp;</option>
+                                          <option value="409817" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_409817_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_409817_tn.1080.jpg">&nbsp;</option>
+                                          <option value="445845" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_445845_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_445845_tn.1080.jpg">&nbsp;</option>
+                                          <option value="148711" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_148711_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_148711_tn.1080.jpg">&nbsp;</option>
+                                          <option value="753940" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_753940_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_753940_tn.1080.jpg">&nbsp;</option>
+                                          <option value="537493" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_537493_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_537493_tn.1080.jpg">&nbsp;</option>
+                                          <option value="500609" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_500609_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_500609_tn.1080.jpg">&nbsp;</option>
+                                          <option value="134020" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_134020_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_134020_tn.1080.jpg">&nbsp;</option>
+                                          <option value="872470" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_872470_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_872470_tn.1080.jpg">&nbsp;</option>
+                                          <option value="388786" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_388786_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_388786_tn.1080.jpg">&nbsp;</option>
+                                          <option value="929636" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_929636_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_929636_tn.1080.jpg">&nbsp;</option>
+                                          <option value="289949" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_289949_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_289949_tn.1080.jpg">&nbsp;</option>
+                                          <option value="066196" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_066196_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_066196_tn.1080.jpg">&nbsp;</option>
+                                          <option value="346839" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_346839_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_346839_tn.1080.jpg">&nbsp;</option>
+                                          <option value="819647" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_819647_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_819647_tn.1080.jpg">&nbsp;</option>
+                                          <option value="102194" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_102194_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_102194_tn.1080.jpg">&nbsp;</option>
+                                          <option value="671489" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_671489_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_671489_tn.1080.jpg">&nbsp;</option>
+                                          <option value="476611" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_476611_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_476611_tn.1080.jpg">&nbsp;</option>
+                                          <option value="591661" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_591661_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_591661_tn.1080.jpg">&nbsp;</option>
+                                          <option value="242168" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_242168_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_242168_tn.1080.jpg">&nbsp;</option>
+                                      </select>
+     </ons-select>
+
+    <ons-select class="select">
+         <option value="basic">Dekoráció</option>
+        <option value="1">Piros</option>
+        <option value="2">Kék</option>
+        <option value="3">Zöld</option>
+        <option value="4">Szürke</option>
+     </ons-select>
+
+      <ons-select class="select">
+         <option value="basic">Oldal elrendezés</option>
+        <option value="1">Piros</option>
+        <option value="2">Kék</option>
+        <option value="3">Zöld</option>
+        <option value="4">Szürke</option>
+     </ons-select>
+
+</ons-row>
 <script type = "text/javascript">
   /*HÁTTÉRSZÍN*/
     function colorDiv() {
@@ -638,201 +867,7 @@
  
   </script>
 
-  <!--select minta-->
-      <ons-select class="select" name="imgcolor" id="imgcolor" onchange="imgDiv()">
-     <div id="nemo">
-     </div>
-        <option value="blank" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_blank_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_blank_tn.1080.jpg">blank</option>
-          <option value="valentine_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_1_tn.1080.jpg">&nbsp;</option>
-          <option value="valentine_2" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_2_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_2_tn.1080.jpg">&nbsp;</option>
-          <option value="valentine_3" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_3_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_3_tn.1080.jpg">&nbsp;</option>
-          <option value="valentine_4" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_4_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_4_tn.1080.jpg">&nbsp;</option>
-          <option value="valentine_5" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_5_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_5_tn.1080.jpg">&nbsp;</option>
-          <option value="valentine_6" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_6_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_6_tn.1080.jpg">&nbsp;</option>
-          <option value="valentine_7" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_7_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_valentine_7_tn.1080.jpg">&nbsp;</option>
-          <option value="karneval_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_1_tn.1080.jpg">&nbsp;</option>
-          <option value="karneval_2" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_2_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_2_tn.1080.jpg">&nbsp;</option>
-          <option value="karneval_3" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_3_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_3_tn.1080.jpg">&nbsp;</option>
-          <option value="karneval_4" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_4_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_4_tn.1080.jpg">&nbsp;</option>
-          <option value="karneval_5" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_5_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_5_tn.1080.jpg">&nbsp;</option>
-          <option value="karneval_6" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_6_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_6_tn.1080.jpg">&nbsp;</option>
-          <option value="karneval_7" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_7_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_7_tn.1080.jpg">&nbsp;</option>
-          <option value="karneval_8" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_8_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_karneval_8_tn.1080.jpg">&nbsp;</option>
-          <option value="argyle_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_argyle_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_argyle_1_tn.1080.jpg">&nbsp;</option>
-          <option value="argyle_2" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_argyle_2_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_argyle_2_tn.1080.jpg">&nbsp;</option>
-          <option value="argyle_3" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_argyle_3_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_argyle_3_tn.1080.jpg">&nbsp;</option>
-          <option value="argyle_4" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_argyle_4_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_argyle_4_tn.1080.jpg">&nbsp;</option>
-          <option value="rozsak_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_rozsak_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_rozsak_1_tn.1080.jpg">&nbsp;</option>
-          <option value="tulipanok_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_tulipanok_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_tulipanok_1_tn.1080.jpg">&nbsp;</option>
-                                          <option value="esernyok_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_esernyok_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_esernyok_1_tn.1080.jpg">&nbsp;</option>
-                                          <option value="fuszalak_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_fuszalak_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_fuszalak_1_tn.1080.jpg">&nbsp;</option>
-                                          <option value="baby_girl_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_baby_girl_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_baby_girl_1_tn.1080.jpg">&nbsp;</option>
-                                          <option value="baby_boy_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_baby_boy_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_baby_boy_1_tn.1080.jpg">&nbsp;</option>
-                                          <option value="baby_green_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_baby_green_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_baby_green_1_tn.1080.jpg">&nbnbsp;</option>
-                                          <option value="viragok_mehecske1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_viragok_mehecske1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_viragok_mehecske1_tn.1080.jpg">&nbsp;</option>
-                                          <option value="ceruzak_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_ceruzak_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_ceruzak_1_tn.1080.jpg">&nbsp;</option>
-                                          <option value="babakocsi_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_babakocsi_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_babakocsi_1_tn.1080.jpg">&nbsp;</option>
-                                          <option value="babarucik_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_babarucik_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_babarucik_1_tn.1080.jpg">&nbsp;</option>
-                                          <option value="kis_golyak_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_kis_golyak_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_kis_golyak_1_tn.1080.jpg">&nbsp;</option>
-                                          <option value="jatekok_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_jatekok_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_jatekok_1_tn.1080.jpg">&nbsp;</option>
-                                          <option value="kis_pottyos_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_kis_pottyos_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_kis_pottyos_1_tn.1080.jpg">&nbsp;</option>
-                                          <option value="nagy_golyak_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_nagy_golyak_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_nagy_golyak_1_tn.1080.jpg">&nbsp;</option>
-                                          <option value="nagy_pottyos_1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_nagy_pottyos_1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_nagy_pottyos_1_tn.1080.jpg">&nbsp;</option>
-                                          <option value="405449" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_405449_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_405449_tn.1080.jpg">&nbsp;</option>
-                                          <option value="201159" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_201159_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_201159_tn.1080.jpg">&nbsp;</option>
-                                          <option value="434269" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_434269_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_434269_tn.1080.jpg">&nbsp;</option>
-                                          <option value="821391" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_821391_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_821391_tn.1080.jpg">&nbsp;</option>
-                                          <option value="021464" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_021464_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_021464_tn.1080.jpg">&nbsp;</option>
-                                          <option value="112999" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_112999_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_112999_tn.1080.jpg">&nbsp;</option>
-                                          <option value="580793" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_580793_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_580793_tn.1080.jpg">&nbsp;</option>
-                                          <option value="198428" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_198428_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_198428_tn.1080.jpg">&nbsp;</option>
-                                          <option value="841291" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_841291_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_841291_tn.1080.jpg">&nbsp;</option>
-                                          <option value="223442" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_223442_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_223442_tn.1080.jpg">&nbsp;</option>
-                                          <option value="506133" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_506133_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_506133_tn.1080.jpg">&nbsp;</option>
-                                          <option value="694311" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_694311_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_694311_tn.1080.jpg">&nbsp;</option>
-                                          <option value="392388" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_392388_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_392388_tn.1080.jpg">&nbsp;</option>
-                                          <option value="900630" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_900630_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_900630_tn.1080.jpg">&nbsp;</option>
-                                          <option value="pottyos" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_pottyos_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_pottyos_tn.1080.jpg">&nbsp;</option>
-                                          <option value="cikkcakk" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_cikkcakk_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_cikkcakk_tn.1080.jpg">&nbsp;</option>
-                                          <option value="hullamok" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_hullamok_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_hullamok_tn.1080.jpg">&nbsp;</option>
-                                          <option value="abrosz" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_abrosz_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_abrosz_tn.1080.jpg">&nbsp;</option>
-                                          <option value="ornament" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_ornament_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_ornament_tn.1080.jpg">&nbsp;</option>
-                                          <option value="gotikus2" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_gotikus2_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_gotikus2_tn.1080.jpg">&nbsp;</option>
-                                          <option value="viragok" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_viragok_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_viragok_tn.1080.jpg">&nbsp;</option>
-                                          <option value="levelek" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_levelek_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_levelek_tn.1080.jpg">&nbsp;</option>
-                                          <option value="indas" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_indas_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_indas_tn.1080.jpg">&nbsp;</option>
-                                          <option value="baglyok" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_baglyok_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_baglyok_tn.1080.jpg">&nbsp;</option>
-                                          <option value="hopihe" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_hopihe_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_hopihe_tn.1080.jpg">&nbsp;</option>
-                                          <option value="pitypang" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_pitypang_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_pitypang_tn.1080.jpg">&nbsp;</option>
-                                          <option value="hoeses" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_hoeses_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_hoeses_tn.1080.jpg">&nbsp;</option>
-                                          <option value="vilagterkep" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_vilagterkep_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_vilagterkep_tn.1080.jpg">&nbsp;</option>
-                                          <option value="faminta" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_faminta_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_faminta_tn.1080.jpg">&nbsp;</option>
-                                          <option value="kopott" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_kopott_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_kopott_tn.1080.jpg">&nbsp;</option>
-                                          <option value="ferdeabrosz" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_ferdeabrosz_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_ferdeabrosz_tn.1080.jpg">&nbsp;</option>
-                                          <option value="nagyiv" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_nagyiv_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_nagyiv_tn.1080.jpg">&nbsp;</option>
-                                          <option value="konyvcsik1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_konyvcsik1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_konyvcsik1_tn.1080.jpg">&nbsp;</option>
-                                          <option value="minta1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_minta1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_minta1_tn.1080.jpg">&nbsp;</option>
-                                          <option value="hopiheslogos" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_hopiheslogos_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_hopiheslogos_tn.1080.jpg">&nbsp;</option>
-                                          <option value="csikoscsillagos" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_csikoscsillagos_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_csikoscsillagos_tn.1080.jpg">&nbsp;</option>
-                                          <option value="pottyoskekszalagos" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_pottyoskekszalagos_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_pottyoskekszalagos_tn.1080.jpg">&nbsp;</option>
-                                          <option value="csikospottyos" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_csikospottyos_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_csikospottyos_tn.1080.jpg">&nbsp;</option>
-                                          <option value="rozsas2" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_rozsas2_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_rozsas2_tn.1080.jpg">&nbsp;</option>
-                                          <option value="rozsas1" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_rozsas1_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_rozsas1_tn.1080.jpg">&nbsp;</option>
-                                          <option value="hatterlevelek" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_hatterlevelek_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_hatterlevelek_tn.1080.jpg">&nbsp;</option>
-                                          <option value="karacsonyfull" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_karacsonyfull_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_karacsonyfull_tn.1080.jpg">&nbsp;</option>
-                                          <option value="kovirag" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_kovirag_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_kovirag_tn.1080.jpg">&nbsp;</option>
-                                          <option value="kovirag2" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_kovirag2_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_kovirag2_tn.1080.jpg">&nbsp;</option>
-                                          <option value="cikkcakkpotty" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_cikkcakkpotty_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_cikkcakkpotty_tn.1080.jpg">&nbsp;</option>
-                                          <option value="barnakacskaringos" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_barnakacskaringos_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_barnakacskaringos_tn.1080.jpg">&nbsp;</option>
-                                          <option value="viragostapeta" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_viragostapeta_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_viragostapeta_tn.1080.jpg">&nbsp;</option>
-                                          <option value="foltos" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_foltos_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_foltos_tn.1080.jpg">&nbsp;</option>
-                                          <option value="regipapir" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_regipapir_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_regipapir_tn.1080.jpg">&nbsp;</option>
-                                          <option value="foszlotapeta" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_foszlotapeta_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_foszlotapeta_tn.1080.jpg">&nbsp;</option>
-                                          <option value="kopas" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_kopas_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_kopas_tn.1080.jpg">&nbsp;</option>
-                                          <option value="mozgasb" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_mozgasb_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_mozgasb_tn.1080.jpg">&nbsp;</option>
-                                          <option value="mozgaskek" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_mozgaskek_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_mozgaskek_tn.1080.jpg">&nbsp;</option>
-                                          <option value="mozgasvirag" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_mozgasvirag_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_mozgasvirag_tn.1080.jpg">&nbsp;</option>
-                                          <option value="indas2" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_indas2_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_indas2_tn.1080.jpg">&nbsp;</option>
-                                          <option value="zoldbarokk" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_zoldbarokk_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_zoldbarokk_tn.1080.jpg">&nbsp;</option>
-                                          <option value="vizjeles" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_vizjeles_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_vizjeles_tn.1080.jpg">&nbsp;</option>
-                                          <option value="761625" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_761625_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_761625_tn.1080.jpg">&nbsp;</option>
-                                          <option value="874320" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_874320_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_874320_tn.1080.jpg">&nbsp;</option>
-                                          <option value="707180" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_707180_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_707180_tn.1080.jpg">&nbsp;</option>
-                                          <option value="387819" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_387819_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_387819_tn.1080.jpg">&nbsp;</option>
-                                          <option value="106535" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_106535_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_106535_tn.1080.jpg">&nbsp;</option>
-                                          <option value="246469" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_246469_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_246469_tn.1080.jpg">&nbsp;</option>
-                                          <option value="284205" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_284205_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_284205_tn.1080.jpg">&nbsp;</option>
-                                          <option value="000670" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_000670_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_000670_tn.1080.jpg">&nbsp;</option>
-                                          <option value="599591" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_599591_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_599591_tn.1080.jpg">&nbsp;</option>
-                                          <option value="870745" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_870745_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_870745_tn.1080.jpg">&nbsp;</option>
-                                          <option value="588788" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_588788_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_588788_tn.1080.jpg">&nbsp;</option>
-                                          <option value="523583" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_523583_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_523583_tn.1080.jpg">&nbsp;</option>
-                                          <option value="590483" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_590483_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_590483_tn.1080.jpg">&nbsp;</option>
-                                          <option value="476767" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_476767_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_476767_tn.1080.jpg">&nbsp;</option>
-                                          <option value="761187" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_761187_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_761187_tn.1080.jpg">&nbsp;</option>
-                                          <option value="410920" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_410920_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_410920_tn.1080.jpg">&nbsp;</option>
-                                          <option value="187397" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_187397_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_187397_tn.1080.jpg">&nbsp;</option>
-                                          <option value="026569" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_026569_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_026569_tn.1080.jpg">&nbsp;</option>
-                                          <option value="899681" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_899681_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_899681_tn.1080.jpg">&nbsp;</option>
-                                          <option value="973915" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_973915_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_973915_tn.1080.jpg">&nbsp;</option>
-                                          <option value="500451" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_500451_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_500451_tn.1080.jpg">&nbsp;</option>
-                                          <option value="557918" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_557918_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_557918_tn.1080.jpg">&nbsp;</option>
-                                          <option value="608952" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_608952_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_608952_tn.1080.jpg">&nbsp;</option>
-                                          <option value="353693" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_353693_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_353693_tn.1080.jpg">&nbsp;</option>
-                                          <option value="811017" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_811017_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_811017_tn.1080.jpg">&nbsp;</option>
-                                          <option value="313445" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_313445_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_313445_tn.1080.jpg">&nbsp;</option>
-                                          <option value="883860" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_883860_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_883860_tn.1080.jpg">&nbsp;</option>
-                                          <option value="733919" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_733919_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_733919_tn.1080.jpg">&nbsp;</option>
-                                          <option value="544744" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_544744_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_544744_tn.1080.jpg">&nbsp;</option>
-                                          <option value="031654" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_031654_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_031654_tn.1080.jpg">&nbsp;</option>
-                                          <option value="194108" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_194108_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_194108_tn.1080.jpg">&nbsp;</option>
-                                          <option value="545352" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_545352_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_545352_tn.1080.jpg">&nbsp;</option>
-                                          <option value="428211" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_428211_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_428211_tn.1080.jpg">&nbsp;</option>
-                                          <option value="927720" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_927720_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_927720_tn.1080.jpg">&nbsp;</option>
-                                          <option value="036426" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_036426_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_036426_tn.1080.jpg">&nbsp;</option>
-                                          <option value="160236" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_160236_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_160236_tn.1080.jpg">&nbsp;</option>
-                                          <option value="018726" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_018726_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_018726_tn.1080.jpg">&nbsp;</option>
-                                          <option value="210926" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_210926_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_210926_tn.1080.jpg">&nbsp;</option>
-                                          <option value="814244" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_814244_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_814244_tn.1080.jpg">&nbsp;</option>
-                                          <option value="074131" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_074131_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_074131_tn.1080.jpg">&nbsp;</option>
-                                          <option value="053010" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_053010_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_053010_tn.1080.jpg">&nbsp;</option>
-                                          <option value="989878" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_989878_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_989878_tn.1080.jpg">&nbsp;</option>
-                                          <option value="647660" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_647660_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_647660_tn.1080.jpg">&nbsp;</option>
-                                          <option value="881609" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_881609_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_881609_tn.1080.jpg">&nbsp;</option>
-                                          <option value="908809" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_908809_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_908809_tn.1080.jpg">&nbsp;</option>
-                                          <option value="788999" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_788999_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_788999_tn.1080.jpg">&nbsp;</option>
-                                          <option value="498067" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_498067_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_498067_tn.1080.jpg">&nbsp;</option>
-                                          <option value="977889" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_977889_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_977889_tn.1080.jpg">&nbsp;</option>
-                                          <option value="406437" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_406437_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_406437_tn.1080.jpg">&nbsp;</option>
-                                          <option value="815048" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_815048_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_815048_tn.1080.jpg">&nbsp;</option>
-                                          <option value="609782" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_609782_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_609782_tn.1080.jpg">&nbsp;</option>
-                                          <option value="017640" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_017640_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_017640_tn.1080.jpg">&nbsp;</option>
-                                          <option value="426817" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_426817_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_426817_tn.1080.jpg">&nbsp;</option>
-                                          <option value="504235" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_504235_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_504235_tn.1080.jpg">&nbsp;</option>
-                                          <option value="803987" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_803987_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_803987_tn.1080.jpg">&nbsp;</option>
-                                          <option value="335558" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_335558_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_335558_tn.1080.jpg">&nbsp;</option>
-                                          <option value="065854" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_065854_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_065854_tn.1080.jpg">&nbsp;</option>
-                                          <option value="747992" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_747992_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_747992_tn.1080.jpg">&nbsp;</option>
-                                          <option value="695426" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_695426_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_695426_tn.1080.jpg">&nbsp;</option>
-                                          <option value="251882" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_251882_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_251882_tn.1080.jpg">&nbsp;</option>
-                                          <option value="528049" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_528049_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_528049_tn.1080.jpg">&nbsp;</option>
-                                          <option value="743076" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_743076_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_743076_tn.1080.jpg">&nbsp;</option>
-                                          <option value="150986" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_150986_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_150986_tn.1080.jpg">&nbsp;</option>
-                                          <option value="366980" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_366980_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_366980_tn.1080.jpg">&nbsp;</option>
-                                          <option value="571910" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_571910_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_571910_tn.1080.jpg">&nbsp;</option>
-                                          <option value="007918" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_007918_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_007918_tn.1080.jpg">&nbsp;</option>
-                                          <option value="580233" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_580233_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_580233_tn.1080.jpg">&nbsp;</option>
-                                          <option value="804596" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_804596_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_804596_tn.1080.jpg">&nbsp;</option>
-                                          <option value="081667" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_081667_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_081667_tn.1080.jpg">&nbsp;</option>
-                                          <option value="026681" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_026681_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_026681_tn.1080.jpg">&nbsp;</option>
-                                          <option value="073202" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_073202_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_073202_tn.1080.jpg">&nbsp;</option>
-                                          <option value="285459" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_285459_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_285459_tn.1080.jpg">&nbsp;</option>
-                                          <option value="316945" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_316945_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_316945_tn.1080.jpg">&nbsp;</option>
-                                          <option value="391021" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_391021_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_391021_tn.1080.jpg">&nbsp;</option>
-                                          <option value="706273" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_706273_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_706273_tn.1080.jpg">&nbsp;</option>
-                                          <option value="410173" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_410173_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_410173_tn.1080.jpg">&nbsp;</option>
-                                          <option value="622969" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_622969_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_622969_tn.1080.jpg">&nbsp;</option>
-                                          <option value="409817" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_409817_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_409817_tn.1080.jpg">&nbsp;</option>
-                                          <option value="445845" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_445845_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_445845_tn.1080.jpg">&nbsp;</option>
-                                          <option value="148711" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_148711_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_148711_tn.1080.jpg">&nbsp;</option>
-                                          <option value="753940" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_753940_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_753940_tn.1080.jpg">&nbsp;</option>
-                                          <option value="537493" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_537493_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_537493_tn.1080.jpg">&nbsp;</option>
-                                          <option value="500609" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_500609_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_500609_tn.1080.jpg">&nbsp;</option>
-                                          <option value="134020" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_134020_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_134020_tn.1080.jpg">&nbsp;</option>
-                                          <option value="872470" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_872470_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_872470_tn.1080.jpg">&nbsp;</option>
-                                          <option value="388786" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_388786_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_388786_tn.1080.jpg">&nbsp;</option>
-                                          <option value="929636" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_929636_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_929636_tn.1080.jpg">&nbsp;</option>
-                                          <option value="289949" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_289949_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_289949_tn.1080.jpg">&nbsp;</option>
-                                          <option value="066196" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_066196_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_066196_tn.1080.jpg">&nbsp;</option>
-                                          <option value="346839" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_346839_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_346839_tn.1080.jpg">&nbsp;</option>
-                                          <option value="819647" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_819647_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_819647_tn.1080.jpg">&nbsp;</option>
-                                          <option value="102194" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_102194_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_102194_tn.1080.jpg">&nbsp;</option>
-                                          <option value="671489" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_671489_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_671489_tn.1080.jpg">&nbsp;</option>
-                                          <option value="476611" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_476611_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_476611_tn.1080.jpg">&nbsp;</option>
-                                          <option value="591661" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_591661_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_591661_tn.1080.jpg">&nbsp;</option>
-                                          <option value="242168" data-tn="https://hu.internetprint.eu/images/frontend2/photobook/decor_242168_tn2.1080.jpg" data-tn-small="https://hu.internetprint.eu/images/frontend2/photobook/decor_242168_tn.1080.jpg">&nbsp;</option>
-                                      </select>
-     </ons-select>
+  
 
 <script type = "text/javascript">
   /*HÁTTÉR*/
@@ -864,22 +899,6 @@
 } 
   </script>
 
-
-      <ons-select class="select">
-         <option value="basic">Dekoráció</option>
-        <option value="1">Piros</option>
-        <option value="2">Kék</option>
-        <option value="3">Zöld</option>
-        <option value="4">Szürke</option>
-     </ons-select>
-
-      <ons-select class="select">
-         <option value="basic">Oldal elrendezés</option>
-        <option value="1">Piros</option>
-        <option value="2">Kék</option>
-        <option value="3">Zöld</option>
-        <option value="4">Szürke</option>
-     </ons-select>
 
 
      <script type="text/javascript">
@@ -927,11 +946,12 @@ ons.ready(function() {
 <!--1. fotókönyv 2.oldal//////////////////////////////////////////////////////////////////////////////////-->
 <div class="ons-card-div">
 <ons-card>
-  <div class="book" id="change">
+  <div class="book">
         <div class="box">
          <!-- <div class="js--image-preview"></div> -->
 
          <div class="page upload-options" id="first" style="position: relative; width:100%; height: 100%; ">
+
                   <div class="js--image-preview" id="img1">
                   <input type="file" class="image-upload" accept="image/*" style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;"/>
           </div>
@@ -940,6 +960,7 @@ ons.ready(function() {
 
   
            <div class="box page upload-options" id="second">
+          
            <div class="js--image-preview" id="img2">
             <input type="file" class="image-upload" accept="image/*" style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;"/> 
             </div>
@@ -950,7 +971,7 @@ ons.ready(function() {
        
   </div>
 
-<div class="buttons_div">
+<ons-row class="buttons_div">
     <button class="imgRotation1" onclick="imgRotate()"><i style="font-size:18px" class="fa">&#xf01e;</i></button>    
 
      <button id="button">
@@ -962,9 +983,9 @@ ons.ready(function() {
      <button id="button3">
        <img class="elrendezes_icon" src="../www/img/elrendezes_3.jpg" alt="elrendezes_3">
      </button>
-</div>
+</ons-row>
 
-<div class="button_div">
+<ons-row class="buttons_div">
     <button class="imgRotation2" onclick="imgRotate()"><i style="font-size:18px" class="fa">&#xf01e;</i></button> 
      <button id="button4">
        <img class="elrendezes_icon" src="../www/img/elrendezes_1.jpg" alt="elrendezes_1">
@@ -976,16 +997,61 @@ ons.ready(function() {
        <img class="elrendezes_icon" src="../www/img/elrendezes_3.jpg" alt="elrendezes_3">
      </button>
 
- </div>    
+ </ons-row>    
+ 
   </ons-card>
 </div>
- 
+<!-- ons-card div -->
 
- 
+ <!--select színek-->
+ <ons-row class="buttons_selects">
+     <ons-select class="select" name="bgcolor" id="bgcolor" onchange="colorDiv()">
+     <div>
+     </div>
+        <option value=szurke> Szürke</option>
+        <option value=feher> Fehér</option> 
+        <option value=kek> Kék</option>
+        <option value=yellow> Sárga</option>
+        <option value=green> Zöld</option>
+     </ons-select>
+
+
+  <!--select minta-->
+  
+      <ons-select class="select" name="imgcolor" id="imgcolor" onchange="imgDiv()">
+     <div id="nemo">
+     </div>
+         <option value="minta1">Minta1</option>
+        <option value="minta2">Minta2</option>
+        <option value="minta3">Minta3</option>
+        <option value="minta4">Minta4</option>
+        <option value="minta5">Minta5</option>
+     </ons-select>
+
+
+      <ons-select class="select">
+         <option value="basic">Dekoráció</option>
+        <option value="1">Piros</option>
+        <option value="2">Kék</option>
+        <option value="3">Zöld</option>
+        <option value="4">Szürke</option>
+     </ons-select>
+
+      <ons-select class="select">
+         <option value="basic">Oldal elrendezés</option>
+        <option value="1">Piros</option>
+        <option value="2">Kék</option>
+        <option value="3">Zöld</option>
+        <option value="4">Szürke</option>
+     </ons-select>
+    </ons-row>
+
+<!-- első fotókönyv második oldal vége  
+  -->
   <script type="text/javascript">
 
 /*image resize*/
-  $('#button').click(function(){
+$('#button').click(function(){
     $('#img1').animate({height: '85%', width: '85%', margin: '10px 0 0 10px'});
     //this method increases the height to 72px
 });
@@ -1012,6 +1078,36 @@ $('#button5').click(function(){
 
 $('#button6').click(function(){
     $('#img2').animate({height: '40%', width: '88%', margin: '5% 5% 5% 5%'});
+    //This method keeps increasing the height by 36px
+});
+
+$('#button7').click(function(){
+    $('#img3').animate({height: '85%', width: '85%', margin: '10px 0 0 10px'});
+    //this method increases the height to 72px
+});
+
+$('#button8').click(function(){
+    $('#img3').animate({height: '40%', width: '88%', margin: '5% 5% 5% 5%'});
+    //This method keeps increasing the height by 36px
+});
+
+$('#button9').click(function(){
+    $('#img3').animate({height: '88%', width: '40%', margin: '5% 5% 5% 5%'});
+    //This method keeps increasing the height by 36px
+});
+
+$('#button10').click(function(){
+    $('#img4').animate({height: '85%', width: '85%', margin: '10px 0 0 10px'});
+    //this method increases the height to 72px
+});
+
+$('#button11').click(function(){
+    $('#img4').animate({height: '40%', width: '88%', margin: '5% 5% 5% 5%'});
+    //This method keeps increasing the height by 36px
+});
+
+$('#button12').click(function(){
+    $('#img4').animate({height: '88%', width: '40%', margin: '5% 5% 5% 5%'});
     //This method keeps increasing the height by 36px
 });
 /*image resize end*/
@@ -1160,9 +1256,72 @@ function initDropEffect(box){
 }
 
   </script>
-  <!-- img upload vége -->
+  
 
-<!--select színek-->
+
+
+  <!--1. fotókönyv 3.oldal//////////////////////////////////////////////////////////////////////////////////-->
+<div class="ons-card-div">
+<ons-card>
+  <div class="book">
+        <div class="box">
+         <!-- <div class="js--image-preview"></div> -->
+
+         <div class="page upload-options" id="first" style="position: relative; width:100%; height: 100%; ">
+
+                  <div class="js--image-preview" id="img3">
+                  <input type="file" class="image-upload" accept="image/*" style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;"/>
+          </div>
+          </div>
+          </div> 
+
+  
+           <div class="box page upload-options" id="second">
+          
+           <div class="js--image-preview" id="img4">
+            <input type="file" class="image-upload" accept="image/*" style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;"/> 
+            </div>
+            
+         </div>   
+         <!-- </div>        -->
+                  <!-- <output id="eredmeny"/></output> -->
+       
+  </div>
+
+<ons-row class="buttons_div">
+    <button class="imgRotation1" onclick="imgRotate()"><i style="font-size:18px" class="fa">&#xf01e;</i></button>    
+
+     <button id="button7">
+       <img class="elrendezes_icon" src="../www/img/elrendezes_1.jpg" alt="elrendezes_1">
+     </button>
+     <button id="button8">
+       <img class="elrendezes_icon" src="../www/img/elrendezes_2.jpg" alt="elrendezes_2">
+     </button>
+     <button id="button9">
+       <img class="elrendezes_icon" src="../www/img/elrendezes_3.jpg" alt="elrendezes_3">
+     </button>
+</ons-row>
+
+<ons-row class="buttons_div">
+    <button class="imgRotation2" onclick="imgRotate()"><i style="font-size:18px" class="fa">&#xf01e;</i></button> 
+     <button id="button10">
+       <img class="elrendezes_icon" src="../www/img/elrendezes_1.jpg" alt="elrendezes_1">
+     </button>
+     <button id="button11">
+       <img class="elrendezes_icon" src="../www/img/elrendezes_2.jpg" alt="elrendezes_2">
+     </button>
+     <button id="button12">
+       <img class="elrendezes_icon" src="../www/img/elrendezes_3.jpg" alt="elrendezes_3">
+     </button>
+
+ </ons-row>    
+ 
+  </ons-card>
+</div>
+<!-- ons-card div -->
+
+ <!--select színek-->
+ <ons-row class="buttons_selects">
      <ons-select class="select" name="bgcolor" id="bgcolor" onchange="colorDiv()">
      <div>
      </div>
@@ -1175,6 +1334,7 @@ function initDropEffect(box){
 
 
   <!--select minta-->
+  
       <ons-select class="select" name="imgcolor" id="imgcolor" onchange="imgDiv()">
      <div id="nemo">
      </div>
@@ -1203,40 +1363,22 @@ function initDropEffect(box){
         <option value="3">Zöld</option>
         <option value="4">Szürke</option>
      </ons-select>
+    </ons-row>
 
-
-  <!--1. fotókönyv 3.oldal////////////////////////////////////////////////////////////////////////////////-->
- <ons-card>
-  <div class="book">
-        <div class="box">
-         <div class="page upload-options" id="first" style="position: relative; width:100%; height: 100%; ">
-                  <div class="js--image-preview" id="img3">
-                  <input type="file" class="image-upload" accept="image/*" style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;"/>
-          </div>
-          </div>
-          </div> 
-
-           <div class="box page upload-options" id="second">
-           <div class="js--image-preview" id="img4">
-            <input type="file" class="image-upload" accept="image/*" style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;"/> 
-            </div>
-            
-         </div>   
-             
-  </div>
-    <button id="imgRotation3" onclick="imgRotate()">Forgasd</button>    
-    <button id="imgRotation4" onclick="imgRotate()">Forgasd</button>   
-  </ons-card>
-
+<!-- első fotókönyv második oldal vége  
+  -->
+  
   <!--1.fotókönyv első oldal vége//////////////////////////////////////////////////////////////////////////-->
-    <ons-button onclick="fn.pushPage({'id': 'kispbtwo.html', 'title': 'Kis Fotókönyv'})" class="next" style="height: 30px; text-align: right; margin-left: 5%;">
-     Vissza
-      </ons-button>
+  <ons-row>   
+    <ons-back-button class="next" style="text-align: left;">
+    <!--onclick="fn.pushPage({'id': 'kispbtwo.html', 'title': 'Kis Fotókönyv'})"--> 
+   
+      </ons-back-button>
 
-     <ons-button onclick="fn.pushPage({'id': 'kispbtwo.html', 'title': 'Kis Fotókönyv'})" class="next" style="height: 30px; text-align: right; margin-left: 5%;">
-     Következő
+     <ons-button onclick="fn.pushPage({'id': 'kispbtwo.html', 'title': 'Kis Fotókönyv'})" class="next" style="text-align: right;">
+          &#8594;
       </ons-button>
-
+</ons-row>
 <!--2.fotókönyv köv. oldal//////////////////////////////////////////////////////////////////////////////// -->
 
 <template id="kispbtwo.html">

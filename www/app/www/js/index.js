@@ -172,4 +172,86 @@ window.onload = function(){
 
 
 
-    
+    /*img editors*/
+
+    /*image resize*/
+$('#button').click(function(){
+    $('#img1').animate({height: '85%', width: '85%', margin: '10px 0 0 10px'});
+    //this method increases the height to 72px
+});
+
+$('#button2').click(function(){
+    $('#img1').animate({height: '40%', width: '88%', margin: '5% 5% 5% 5%'});
+    //This method keeps increasing the height by 36px
+});
+
+$('#button3').click(function(){
+    $('#img1').animate({height: '88%', width: '40%', margin: '5% 5% 5% 5%'});
+    //This method keeps increasing the height by 36px
+});
+
+$('#button4').click(function(){
+    $('#img2').animate({height: '88%', width: '88%', margin: '5% 5% 5% 5%'});
+    //This method keeps increasing the height by 36px
+});
+
+$('#button5').click(function(){
+    $('#img2').animate({height: '88%', width: '40%', margin: '5% 5% 5% 5%'});
+    //This method keeps increasing the height by 36px
+});
+
+$('#button6').click(function(){
+    $('#img2').animate({height: '40%', width: '88%', margin: '5% 5% 5% 5%'});
+    //This method keeps increasing the height by 36px
+});
+/*image resize end*/
+
+
+/*image rotate jquery*/
+  
+   $(document).ready(function() {
+
+
+  var degrees = 0;
+  $('.imgRotation1').click(function rotateMe(e) {
+
+    degrees += 90;
+
+    //$('.img').addClass('rotated'); // for one time rotation
+
+    $('#img1').css({
+
+      'transform': 'rotate(' + degrees + 'deg)',
+      '-ms-transform': 'rotate(' + degrees + 'deg)',
+      '-moz-transform': 'rotate(' + degrees + 'deg)',
+      '-webkit-transform': 'rotate(' + degrees + 'deg)',
+      '-o-transform': 'rotate(' + degrees + 'deg)'
+    });
+
+  })
+});
+
+
+   $(document).ready(function() {
+
+
+  var degrees = 0;
+  $('.imgRotation2').click(function rotateMe(e) {
+
+    degrees += 90;
+
+    //$('.img').addClass('rotated'); // for one time rotation
+
+    $('#img2').css({
+
+      'transform': 'rotate(' + degrees + 'deg)',
+      '-ms-transform': 'rotate(' + degrees + 'deg)',
+      '-moz-transform': 'rotate(' + degrees + 'deg)',
+      '-webkit-transform': 'rotate(' + degrees + 'deg)',
+      '-o-transform': 'rotate(' + degrees + 'deg)'
+    });
+
+  })
+});
+
+  /*image rotate jquery end*/
