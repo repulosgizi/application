@@ -63,14 +63,15 @@ h1 {
 }
 
 .logo_div {
-  text-align: center;
+  text-align: center !important;
 }
 
 .logo {
     height: 80%;
-    width: 80%;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 1%;
 }
 
 .event {
@@ -670,7 +671,6 @@ select option[value="minta5"] { /* value not val */
 .next {
   background-image: linear-gradient(to bottom,#e49300 0,#a76c00 100%) !important;
   background-repeat: repeat-x;
-  float: right;
   margin-right: 5% !important;
   padding-top: 1% !important;
   height: 30px;

@@ -671,7 +671,6 @@ select option[value="minta5"] { /* value not val */
 .next {
   background-image: linear-gradient(to bottom,#e49300 0,#a76c00 100%) !important;
   background-repeat: repeat-x;
-  float: right;
   margin-right: 5% !important;
   padding-top: 1% !important;
   height: 30px;
@@ -682,8 +681,11 @@ select option[value="minta5"] { /* value not val */
    background-image: linear-gradient(to bottom,#e49300 0,#a76c00 100%) !important;
   background-repeat: repeat-x;
   margin-left: 5% !important;
-  padding-top: 1% !important;
+  padding-top: 3% !important;
+  color: #1e88e5 !important;
+  font-size: 20px !important;
 }
+
 .rotation_button {
     background-image: linear-gradient(to bottom,#e49300 0,#a76c00 100%);
     background-repeat: repeat-x;
