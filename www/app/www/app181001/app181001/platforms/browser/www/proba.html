@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Internetprint próba app</title>
+
+  <link rel="stylesheet" href="../www/css/index.css">
+   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script> 
+
+<!--script ezzel működik a galéria és az oldalváltás is-->
+  <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+
+  <script src="../www/js/index.js"></script>
+</head>
+
+<body>
+<!--menü-->
+  <ons-navigator id="appNavigator" swipeable swipe-target-width="80px">
+    <ons-page>
+      <ons-splitter id="appSplitter">
+        <ons-splitter-side id="sidemenu" page="sidemenu.html" swipeable side="right" collapse="" width="260px"></ons-splitter-side>
+        <ons-splitter-content>
+          <ons-page id="tabbar-page">
+            <ons-toolbar>
+              <div class="center">Főoldal</div>
+              <div class="right">
+                <ons-toolbar-button onclick="fn.toggleMenu()">
+                  <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+                </ons-toolbar-button>
+              </div>
+            </ons-toolbar>
+            <ons-tabbar swipeable id="appTabbar" position="auto">
+              <ons-tab label="Főoldal" icon="ion-home" page="home.html" active></ons-tab>
+              <ons-tab label="Kapcsolat" icon="ion-edit" page="forms.html"></ons-tab>
+              <ons-tab label="Információk" icon="fa-question-circle-o" page="animations.html"></ons-tab>
+            </ons-tabbar>
+          </ons-page>
+        </ons-splitter-content>
+      </ons-splitter>
+    </ons-page>
+  </ons-navigator>
+<!--menü vége-->
+
+<!--jobb oldali menü-->
+  <template id="sidemenu.html">
+    <ons-page>
+      <div class="profile-pic">
+        <img src="../www/img/logot.png">
+      </div>
+
+      <ons-list-title>Menü</ons-list-title>
+      <ons-list>
+        
+        <ons-list-item onclick="fn.loadView(0)">
+          <div class="left">
+            <ons-icon fixed-width class="list-item__icon" icon="ion-home, material:md-home"></ons-icon>
+          </div>
+          <div class="center">
+            Főoldal
+          </div>
+          <div class="right">
+            <ons-icon icon="fa-link"></ons-icon>
+          </div>
+        </ons-list-item>
+       
+        <ons-list-item onclick="fn.loadView(1)">
+          <div class="left">
+            <ons-icon fixed-width class="list-item__icon" icon="ion-edit, material:md-edit"></ons-icon>
+          </div>
+          <div class="center">
+            Kapcsolat
+          </div>
+          <div class="right">
+            <ons-icon icon="fa-link"></ons-icon>
+          </div>
+        </ons-list-item>
+        
+        <ons-list-item onclick="fn.loadView(2)">
+          <div class="left">
+            <ons-icon fixed-width class="list-item__icon" icon="fa-question-circle-o, material: md-movie-alt"></ons-icon>
+          </div>
+          <div class="center">
+            Információk
+          </div>
+          <div class="right">
+            <ons-icon icon="fa-link"></ons-icon>
+          </div>
+        </ons-list-item>
+      </ons-list>
+
+
+    </ons-page>
+  </template>
+  <!--jobb oldali menü vége-->
+
+<!--főoldal témák-->
+  <template id="home.html">
+    <ons-page>
+    <div class="profile-pic">
+      <img src="../www/img/logot.png">
+    </div>
+
+    <!--kisfotókönyv-->
+    <ons-card onclick="fn.pushPage({'id': 'kispb.html', 'title': 'Kis Fotókönyv'})" class="kisfotokonyv" style="height: 160px; text-align: center;">
+      
+       <div>
+         <img src="../www/img/pb.png" alt="kisfotokonyv" style="width: 25%">
+       </div>
+      <div class="title">Kis fótókönyv</div>
+      <div class="content">Normál méret (20*20cm)</div>
+    
+    </ons-card>
+
+    <!--közepes fotókönyv-->
+     <ons-card onclick="fn.pushPage({'id': 'kispb.html', 'title': 'Kis Fotókönyv'})" class="kisfotokonyv" style="height: 160px; text-align: center;">
+       <div>
+         <img src="../www/img/mpb.png" alt="kisfotokonyv" style="width: 25%">
+       </div>
+      <div class="title">Közepes fótókönyv</div>
+      <div class="content">A/4-es méret (20*29cm)</div>
+    </ons-card>
+
+    <!--nagy fotókönyv-->
+      <ons-card onclick="fn.pushPage({'id': 'kispb.html', 'title': 'Kis Fotókönyv'})" class="kisfotokonyv" style="height: 160px; text-align: center;">
+       <div>
+         <img src="../www/img/bpb.png" alt="kisfotokonyv" style="width: 25%">
+       </div>
+      <div class="title">Nagy fótókönyv</div>
+      <div class="content">Nagy méret (20*29cm)</div>
+      </ons-card>
+
+
+    </ons-page>
+  </template>
+  <!--főoldal témák vége-->
+
+<!--kapcsolat fül formja-->
+  <template id="forms.html">
+    <ons-page id="forms-page">
+      <ons-list>
+        <ons-list-header>Lépjen velünk kapcsolatba!</ons-list-header>
+        <ons-list-item class="input-items">
+          <div class="left">
+        
+          <label class="center">
+             <fieldset>
+              <ons-input id="name-input" placeholder="Neved" type="text" tabindex="1"></ons-input>
+            </fieldset>
+            
+            <fieldset>
+              <ons-input id="email-input" placeholder="Email cím" type="email" tabindex="2"></ons-input>
+            </fieldset>
+            
+
+            <fieldset>
+              <textarea class="textarea" tabindex="3" placeholder="Szöveg"></textarea>
+            </fieldset>
+            
+            <fieldset>
+              <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Küldés</button>
+            </fieldset>
+
+      </label>
+      </div>
+      </ons-list-item>
+        
+
+    </ons-page>
+  </template>
+  <!--kapcsolat fül form vége-->
+
+<!--fizetés és szállítás-->
+  <template id="animations.html">
+    <ons-page>
+      <div>
+  <h3>Fizetési és szállítási információk</h3>
+    <p>Lorem ipsum dolor Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </p>
+    </div>
+
+    </ons-page>
+  </template>
+
+<!--kis fotókönyv menün belüli szerkesztő rész-->
+  <template id="kispb.html">
+    <ons-page>
+    <!--vissza a főoldalra-->
+      <ons-toolbar>
+        <div class="left">
+          <ons-back-button>Főoldal</ons-back-button>
+        </div>
+        <div class="center"></div>
+      </ons-toolbar>
+<!--vissza a főoldalra vége-->
+     
+     <div data-role="page" data-url="/D:/Mobil app/Onsen/OnsenProba/www/kispb_gyak.html" tabindex="0" class="ui-page ui-page-theme-a ui-page-active">
+  
+<!--1-->
+  <ons-card>
+  <div class="book">
+         <div class="page" id="first">
+                  <input id="files" type="file" /> 
+                  <output id="result"/></output>
+          </div>         
+           <div class="page" id="second">
+                  <input id="kepek" type="file"/> 
+         </div>          
+                  <output id="eredmeny"/></output>
+          <ons-button type="button" id="clear" class=" ui-btn ui-shadow ui-corner-all">Clear</ons-button>
+  </div>        
+  </ons-card>
+
+<!--2-->
+<ons-card>
+  <div class="book">
+         <div class="page" id="first">
+                  <input id="files" type="file" /> 
+                  <output id="result"/></output>
+          </div>         
+           <div class="page" id="second">
+                  <input id="kepek" type="file"/> 
+         </div>          
+                  <output id="eredmeny"/></output>
+          <ons-button type="button" id="clear" class=" ui-btn ui-shadow ui-corner-all">Clear</ons-button>
+  </div>        
+  </ons-card>
+
+  <!--3-->
+  <ons-card>
+  <div class="book">
+         <div class="page" id="first">
+                  <input id="files" type="file" /> 
+                  <output id="result"/></output>
+          </div>         
+           <div class="page" id="second">
+                  <input id="kepek" type="file"/> 
+         </div>          
+                  <output id="eredmeny"/></output>
+          <ons-button type="button" id="clear" class=" ui-btn ui-shadow ui-corner-all">Clear</ons-button>
+  </div>        
+  </ons-card>
+      
+    </ons-page>
+  </template>
+
+  
+  
+</body>
+
+</html>
+
